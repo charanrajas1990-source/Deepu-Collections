@@ -39,11 +39,10 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
+    if (email === 'deepti' && password === '509153') {
       setIsAuthenticated(true);
       setError('');
-    } catch (err) {
+    } else {
       setError('Invalid username or password.');
     }
   };
@@ -93,7 +92,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             <form onSubmit={handleLogin} className="space-y-4">
               {error && <p className="text-red-500 text-xs text-center">{error}</p>}
               <input
-                type="email"
+                type="text"
                 required
                 placeholder="Username (Email)"
                 value={email}
