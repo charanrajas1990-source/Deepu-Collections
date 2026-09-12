@@ -1,0 +1,6 @@
+{
+  "name": "Deepu's Collection",
+  "description": "Exquisite traditional & modern sarees, handcrafted for elegance and tailored for you.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

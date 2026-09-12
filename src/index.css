@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F7F2FA;
+    color: #2A0845;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-futura {
+  font-family: 'Futura', sans-serif;
+}
+
+.bg-primary-purple {
+  background-color: #5C167D;
+}
+
+.text-primary-purple {
+  color: #5C167D;
+}
+
+.border-primary-purple {
+  border-color: #5C167D;
+}
+
+.bg-lavender-cream {
+  background-color: #F7F2FA;
+}
+
+.text-gold {
+  color: #c9a24b;
+}
+
+.bg-gold {
+  background-color: #c9a24b;
+}
+
+.border-gold {
+  border-color: #c9a24b;
+}
+
+/* Custom styles for the scrollbar to match the elegant theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F2FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5C167D;
+  border-radius: 10px;
+  border: 2px solid #F7F2FA;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4A1066;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Selection color */
+::selection {
+  background-color: #c9a24b;
+  color: #2A0845;
+}
+
+/* Base focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #5C167D;
+  outline-offset: 2px;
+}
