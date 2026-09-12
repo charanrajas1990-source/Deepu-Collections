@@ -147,9 +147,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Icons */}
         <div className="flex items-center gap-3 shrink-0">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-[#5C167D]">
-            {isMobileMenuOpen ? <X className="w-8 h-8" strokeWidth={2.5} /> : <Menu className="w-8 h-8" strokeWidth={2.5} />}
-          </button>
           <button onClick={onOpenCart} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-[#5C167D] relative">
             <ShoppingCart className="w-7 h-7" strokeWidth={2} />
             {cartCount > 0 && (
@@ -157,6 +154,9 @@ export const Header: React.FC<HeaderProps> = ({
                 {cartCount}
               </span>
             )}
+          </button>
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-[#5C167D]">
+            {isMobileMenuOpen ? <X className="w-8 h-8" strokeWidth={2.5} /> : <Menu className="w-8 h-8" strokeWidth={2.5} />}
           </button>
         </div>
 

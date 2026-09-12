@@ -66,6 +66,7 @@ export const ShopView: React.FC<ShopViewProps> = ({
               onAddToCart={onAddToCart}
               onToggleWishlist={onToggleWishlist}
               isWishlisted={wishlistIds.includes(product.id)}
+              className="animate-fadeIn"
             />
           ))}
         </div>

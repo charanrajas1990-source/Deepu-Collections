@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A product available in the store",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" }
+      },
+      "required": ["id", "name", "price", "category"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A customer order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "totalAmount": { "type": "number" }
+      },
+      "required": ["id", "customerName", "totalAmount"]
+    }
+  },
+  "firestore": {
+    "products": {
+      "schema": "Product",
+      "description": "Collection of all products"
+    },
+    "orders": {
+      "schema": "Order",
+      "description": "Collection of all orders"
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { X, ShieldCheck, Plus, Trash2, Edit3, Package, DollarSign, Users, ArrowLeft } from 'lucide-react';
 import { Product, Order } from '../types';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../lib/firebase';
 
 interface AdminViewProps {
   isOpen: boolean;
@@ -20,7 +22,9 @@ export const AdminView: React.FC<AdminViewProps> = ({
   orders,
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [passcode, setPasscode] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState<'products' | 'orders'>('products');
   const [isAdding, setIsAdding] = useState(false);
 
@@ -33,12 +37,14 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
   if (!isOpen) return null;
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (passcode === 'admin123') {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       setIsAuthenticated(true);
-    } else {
-      alert('Incorrect passcode. Use admin123');
+      setError('');
+    } catch (err) {
+      setError('Invalid username or password.');
     }
   };
 
@@ -85,14 +91,23 @@ export const AdminView: React.FC<AdminViewProps> = ({
             <h3 className="font-serif text-2xl font-bold text-[#2A0845] mb-2">Admin Authentication</h3>
             <p className="text-gray-500 text-xs mb-6">Enter admin passcode to access inventory and orders.</p>
             <form onSubmit={handleLogin} className="space-y-4">
+              {error && <p className="text-red-500 text-xs text-center">{error}</p>}
+              <input
+                type="email"
+                required
+                placeholder="Username (Email)"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#5C167D]"
+                autoFocus
+              />
               <input
                 type="password"
                 required
-                placeholder="Passcode (admin123)"
-                value={passcode}
-                onChange={(e) => setPasscode(e.target.value)}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-center tracking-widest text-[#2A0845] focus:outline-none focus:border-[#5C167D]"
-                autoFocus
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#5C167D]"
               />
               <button
                 type="submit"

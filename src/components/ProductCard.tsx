@@ -8,6 +8,7 @@ interface ProductCardProps {
   onAddToCart: (product: Product, e: React.MouseEvent) => void;
   onToggleWishlist: (product: Product, e: React.MouseEvent) => void;
   isWishlisted: boolean;
+  className?: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -16,11 +17,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onAddToCart,
   onToggleWishlist,
   isWishlisted,
+  className,
 }) => {
   return (
     <div
       onClick={() => onSelect(product)}
-      className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-purple-100 flex flex-col cursor-pointer relative"
+      className={`group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-purple-100 flex flex-col cursor-pointer relative ${className || ''}`}
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
         <img
