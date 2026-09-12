@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: process.env.NODE_ENV === 'production' ? '/Deepu-Collections/' : '/',
     build: {
       outDir: 'dist',
     },

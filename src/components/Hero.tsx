@@ -9,9 +9,9 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
   return (
     <div className="w-full cursor-pointer overflow-hidden bg-[#2A0845] min-h-[50vh]" onClick={onExplore}>
       <picture className="block w-full mt-[-22%] md:mt-[-12.5%]">
-        <source media="(min-width: 768px)" srcSet="/mockup-desktop-final.png" />
+        <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}mockup-desktop-final.jpg`} />
         <img
-          src="/mockup-mobile-final.png"
+          src={`${import.meta.env.BASE_URL}mockup-mobile-final.jpg`}
           alt="Deepu's Collection Home"
           className="w-full h-auto object-cover object-top"
         />
