@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { INITIAL_PRODUCTS } from './data';
+import React, { useState, useEffect } from 'react';
+import { collection, onSnapshot, doc, setDoc, deleteDoc } from 'firebase/firestore';
+import { db } from './lib/firebase';
+// import { INITIAL_PRODUCTS } from './data';
 import { Product, CartItem, Order } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -21,7 +23,18 @@ import { HowToOrderDemo } from './components/HowToOrderDemo';
 import { FaqDemo } from './components/FaqDemo';
 
 export default function App() {
-  const [products, setProducts] = useState<Product[]>(INITIAL_PRODUCTS);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'products'), (snapshot) => {
+      const productsData = snapshot.docs.map(doc => doc.data() as Product);
+      // Sort or handle data if needed, but for now just set it
+      setProducts(productsData);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
   const [activeTab, setActiveTab] = useState<string>('home');
   const [searchQuery, setSearchQuery] = useState<string>('');
   
@@ -33,7 +46,7 @@ export default function App() {
       id: 'ORD-849201',
       customerName: 'Priya Sharma',
       customerPhone: '+919876543210',
-      items: [{ product: INITIAL_PRODUCTS[0], selectedSize: 'Free Size (9 Yards)', quantity: 1 }],
+      items: [{ product: products[0] || {} as Product, selectedSize: 'Free Size (9 Yards)', quantity: 1 }],
       totalAmount: 4899,
       date: '2026-09-10 14:30',
       status: 'Shipped',
@@ -223,8 +236,20 @@ export default function App() {
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
         products={products}
-        onAddProduct={(newProd) => setProducts([newProd, ...products])}
-        onDeleteProduct={(id) => setProducts(products.filter((p) => p.id !== id))}
+        onAddProduct={async (newProd) => {
+          try {
+            await setDoc(doc(db, 'products', newProd.id), newProd);
+          } catch (e) {
+            console.error("Error adding product:", e);
+          }
+        }}
+        onDeleteProduct={async (id) => {
+          try {
+            await deleteDoc(doc(db, 'products', id));
+          } catch (e) {
+            console.error("Error deleting product:", e);
+          }
+        }}
         orders={orders}
       />
     </div>
