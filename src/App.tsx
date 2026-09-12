@@ -41,17 +41,7 @@ export default function App() {
   // Cart & Wishlist state
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [wishlistIds, setWishlistIds] = useState<string[]>(['1', '5']);
-  const [orders, setOrders] = useState<Order[]>([
-    {
-      id: 'ORD-849201',
-      customerName: 'Priya Sharma',
-      customerPhone: '+919876543210',
-      items: [{ product: products[0] || {} as Product, selectedSize: 'Free Size (9 Yards)', quantity: 1 }],
-      totalAmount: 4899,
-      date: '2026-09-10 14:30',
-      status: 'Shipped',
-    }
-  ]);
+  
 
   // Modals state
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -117,8 +107,12 @@ export default function App() {
     setCartItems((prev) => prev.filter((_, idx) => idx !== index));
   };
 
-  const handleOrderSuccess = (newOrder: Order) => {
-    setOrders((prev) => [newOrder, ...prev]);
+  const handleOrderSuccess = async (newOrder: Order) => {
+    try {
+      await setDoc(doc(db, 'orders', newOrder.id), newOrder);
+    } catch (e) {
+      console.error("Error submitting order:", e);
+    }
   };
 
   const handleSelectCategoryFromHome = (categoryName: string) => {
@@ -250,7 +244,7 @@ export default function App() {
             console.error("Error deleting product:", e);
           }
         }}
-        orders={orders}
+        
       />
     </div>
   );

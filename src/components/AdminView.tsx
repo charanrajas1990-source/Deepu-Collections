@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { X, ShieldCheck, Plus, Trash2, Edit3, Package, DollarSign, Users, ArrowLeft } from 'lucide-react';
 import { Product, Order } from '../types';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../lib/firebase';
+import { auth, db } from '../lib/firebase';
+import { collection, onSnapshot, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 interface AdminViewProps {
   isOpen: boolean;
@@ -10,7 +11,7 @@ interface AdminViewProps {
   products: Product[];
   onAddProduct: (product: Product) => void;
   onDeleteProduct: (id: string) => void;
-  orders: Order[];
+  
 }
 
 export const AdminView: React.FC<AdminViewProps> = ({
@@ -18,10 +19,21 @@ export const AdminView: React.FC<AdminViewProps> = ({
   onClose,
   products,
   onAddProduct,
-  onDeleteProduct,
-  orders,
+  onDeleteProduct
 }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [orders, setOrders] = useState<Order[]>([]);
+
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      const unsubscribe = onSnapshot(collection(db, 'orders'), (snapshot) => {
+        const fetchedOrders = snapshot.docs.map(doc => doc.data() as Order);
+        // Sort orders by date newest first if possible, or just set them
+        setOrders(fetchedOrders.sort((a,b) => b.date.localeCompare(a.date)));
+      });
+      return () => unsubscribe();
+    }
+  }, [isAuthenticated]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
