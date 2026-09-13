@@ -74,14 +74,12 @@ export const Header: React.FC<HeaderProps> = ({
             alt="Logo" 
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-10 md:h-10 object-cover rounded-full shadow-sm" 
           />
-          <div className="flex flex-col justify-center">
-            <span 
-              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-base leading-none tracking-wider uppercase text-[#3B1A4A]"
-            >
-              DEEPU'S COLLECTION
-            </span>
-            <span className="font-sans font-bold text-[10px] sm:text-xs md:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
-          </div>
+          {/* New 3D Gold Typography Logo */}
+          <img 
+            src={`${import.meta.env.BASE_URL}deepus_gold_logo.jpg`}
+            alt="Deepu's Collection"
+            className="h-10 sm:h-12 md:h-12 w-auto object-contain rounded-md shadow-sm"
+          />
         </div>
 
         {/* Center: Desktop Links (Horizontal Line) */}
