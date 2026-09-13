@@ -8,14 +8,46 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
   return (
     <div className="w-full cursor-pointer overflow-hidden bg-[#2A0845] min-h-[50vh]" onClick={onExplore}>
-      <picture className="block w-full mt-[-27%] md:mt-[-12.5%]">
-        <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}mockup-desktop-final.jpg`} />
-        <img
-          src={`${import.meta.env.BASE_URL}mockup-mobile-final.jpg`}
-          alt="Deepu's Collection Home"
-          className="w-full h-auto object-cover object-top"
-        />
-      </picture>
+      <div className="w-full mt-[-27%] md:mt-[-12.5%] relative">
+        <picture className="block w-full">
+          <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}mockup-desktop-final.jpg`} />
+          <img
+            src={`${import.meta.env.BASE_URL}mockup-mobile-final.jpg`}
+            alt="Deepu's Collection Home"
+            className="w-full h-auto object-cover object-top"
+          />
+        </picture>
+        
+        {/* Bright HTML Overlay Button for Mobile (Covers baked-in text) */}
+        <button 
+          className="md:hidden absolute bg-[#eab308] text-[#2A0845] font-bold text-sm sm:text-base rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
+          style={{
+            left: '50%',
+            transform: 'translateX(-50%)',
+            top: '90.2%',
+            width: '56%',
+            height: '5.5%',
+            minHeight: '40px'
+          }}
+        >
+          Shop Now
+        </button>
+
+        {/* Bright HTML Overlay Button for Desktop (Covers baked-in text) */}
+        <button 
+          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-lg rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
+          style={{
+            left: '61.5%',
+            transform: 'translateX(-50%)',
+            top: '72%',
+            width: '26%',
+            height: '6%',
+            minHeight: '48px'
+          }}
+        >
+          Shop Now →
+        </button>
+      </div>
     </div>
   );
 };
