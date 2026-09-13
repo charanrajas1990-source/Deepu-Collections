@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev --port=3000 --hostname=0.0.0.0",
-    "build": "next build",
+    "dev": "tailwindcss -i src/app/globals.css -o public/tailwind.css --watch & next dev --port=3000 --hostname=0.0.0.0",
+    "build": "tailwindcss -i src/app/globals.css -o public/tailwind.css && next build",
     "start": "next start --port=3000 --hostname=0.0.0.0",
     "lint": "next lint"
   },
