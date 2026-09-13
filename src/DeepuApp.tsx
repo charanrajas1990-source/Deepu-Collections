@@ -217,6 +217,10 @@ export default function App() {
         onRemoveItem={handleRemoveCartItem}
         onOrderSuccess={handleOrderSuccess}
         clearCart={() => setCartItems([])}
+        onShopNow={() => {
+          setIsCartOpen(false);
+          setActiveTab('shop');
+        }}
       />
 
       <WishlistModal

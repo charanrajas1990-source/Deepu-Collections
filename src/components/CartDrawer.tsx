@@ -10,6 +10,7 @@ interface CartDrawerProps {
   onRemoveItem: (index: number) => void;
   onOrderSuccess: (order: Order) => void;
   clearCart: () => void;
+  onShopNow?: () => void;
 }
 
 export const CartDrawer: React.FC<CartDrawerProps> = ({
@@ -20,6 +21,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onRemoveItem,
   onOrderSuccess,
   clearCart,
+  onShopNow,
 }) => {
   const [promoCode, setPromoCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
@@ -202,7 +204,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     Your cart is empty.
                   </p>
                   <button 
-                    onClick={onClose} 
+                    onClick={() => {
+                      if (onShopNow) onShopNow();
+                      else onClose();
+                    }} 
                     className="bg-[#dca11d] hover:bg-[#c48f19] text-[#5c4033] font-bold text-[14px] px-8 py-3 rounded-md shadow-sm transition-colors"
                   >
                     Shop Sarees
