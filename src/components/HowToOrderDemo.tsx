@@ -20,7 +20,7 @@ export const HowToOrderDemo: React.FC = () => {
           {/* Connecting Lines */}
           <div className="absolute left-[11px] top-2 bottom-2 w-px bg-[#e8d5c4] md:hidden z-0"></div>
           {/* Desktop horizontal line: spans between dots */}
-          <div className="hidden md:block absolute top-[10px] left-[12.5%] right-[12.5%] h-px bg-[#e8d5c4] z-0"></div>
+          <div className="hidden md:block absolute top-[10px] left-[12.5%] right-[12.5%] h-[2px] bg-[#d5c3b3] z-0"></div>
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-4 relative z-10">
             {steps.map((step, idx) => (
