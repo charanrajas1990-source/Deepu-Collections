@@ -50,7 +50,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                 onClick={() => handleCategoryClick(cat.name)}
                 className="group cursor-pointer flex flex-col items-center shrink-0 snap-start"
               >
-                <div className={`w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] md:w-full md:aspect-square md:h-auto rounded-full overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'ring-4 ring-[#c9a24b] shadow-md' : 'ring-1 ring-gray-200 hover:ring-2 hover:ring-[#c9a24b]/50'}`}>
+                <div className={`w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] md:w-full md:aspect-[3/4] md:h-auto rounded-2xl overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'ring-2 ring-[#c9a24b] ring-offset-2 shadow-md' : 'border border-gray-200 hover:border-[#c9a24b] hover:shadow-md'}`}>
                   <img
                     src={cat.image}
                     alt={cat.name}
