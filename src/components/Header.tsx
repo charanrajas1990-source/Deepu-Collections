@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Heart, ShoppingBag, ShoppingCart, User, Menu, X, ShieldCheck } from 'lucide-react';
+import { Search, Heart, ShoppingBag, ShoppingCart, User, Menu, X, ShieldCheck, Home, Folder, ClipboardList, HelpCircle, Phone } from 'lucide-react';
+import { CATEGORIES } from '../data';
 
 interface HeaderProps {
   activeTab: string;
@@ -161,68 +162,106 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
 
-        {/* Hamburger Menu Dropdown (Visible on all screens for icons) */}
+        {/* Hamburger Menu Side Drawer */}
         {isMobileMenuOpen && (
-          <div 
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-            style={{ top: '100%' }} // Starts just below the header
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-        )}
-        {isMobileMenuOpen && (
-          <div className="absolute right-0 top-full w-1/2 md:w-72 bg-theme-cream border-t border-l border-gray-200 md:border md:rounded-bl-xl px-4 md:px-6 py-4 flex flex-col gap-4 shadow-xl z-50 h-[100vh] overflow-y-auto pb-32">
-            <div className="flex flex-col gap-3 text-sm font-semibold tracking-widest text-[#5C167D]">
+          <div className="lg:hidden">
+            {/* Backdrop */}
+            <div 
+              className="fixed inset-0 bg-black/50 z-[60]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            {/* Drawer */}
+            <div className="fixed inset-y-0 left-0 w-[80%] max-w-[320px] bg-white z-[70] flex flex-col h-[100dvh] overflow-y-auto shadow-2xl transition-transform">
               
-              {/* Mobile-only page links */}
-              <div className="lg:hidden flex flex-col gap-3 pb-3 border-b border-gray-100">
-                <button onClick={() => { setActiveTab('home'); setIsMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#c9a24b]">HOME</button>
+              {/* Drawer Header */}
+              <div className="bg-[#FCF6E8] px-4 py-4 flex items-center justify-between border-b border-[#E5D9C5] shrink-0">
+                <div className="flex items-center gap-3">
+                  <img src={`${import.meta.env.BASE_URL}deepu_logo.PNG`} alt="Logo" className="w-12 h-12 object-contain" />
+                  <div className="flex flex-col mt-1">
+                    <span className="font-serif font-black text-lg leading-none tracking-wide text-[#8C1D35]">Deepu's</span>
+                    <span className="font-sans font-bold text-[10px] tracking-[0.08em] text-[#c9a24b] uppercase mt-1">COLLECTION</span>
+                  </div>
+                </div>
+                <button onClick={() => setIsMobileMenuOpen(false)} className="p-1.5 text-[#3B1A4A] hover:bg-black/5 rounded-full transition-colors">
+                  <X className="w-5 h-5" strokeWidth={2.5} />
+                </button>
+              </div>
+
+              {/* Main Nav Links */}
+              <div className="flex flex-col py-2 bg-white">
+                <button onClick={() => { setActiveTab('home'); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50 text-left">
+                  <Home className="w-[22px] h-[22px] text-[#8C1D35]" strokeWidth={2} />
+                  <span className="font-bold text-[#3B1A4A] text-[15px]">Home</span>
+                </button>
                 <button onClick={() => { 
                   setActiveTab('home'); 
                   setIsMobileMenuOpen(false);
                   setTimeout(() => document.getElementById('categories-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
-                }} className="text-left py-2 hover:text-[#c9a24b]">CATEGORIES</button>
-                <button onClick={() => { setActiveTab('shop'); setIsMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#c9a24b]">SAREE TYPES</button>
+                }} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50 text-left">
+                  <Folder className="w-[22px] h-[22px] text-[#f59e0b]" strokeWidth={2} fill="#f59e0b" fillOpacity={0.8} />
+                  <span className="font-bold text-[#3B1A4A] text-[15px]">Categories</span>
+                </button>
                 <button onClick={() => { 
                   setActiveTab('home'); 
                   setIsMobileMenuOpen(false);
                   setTimeout(() => document.getElementById('how-to-order-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
-                }} className="text-left py-2 hover:text-[#c9a24b]">HOW TO ORDER</button>
+                }} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50 text-left">
+                  <ClipboardList className="w-[22px] h-[22px] text-[#8b5cf6]" strokeWidth={2} />
+                  <span className="font-bold text-[#3B1A4A] text-[15px]">How to Order</span>
+                </button>
                 <button onClick={() => { 
                   setActiveTab('home'); 
                   setIsMobileMenuOpen(false);
                   setTimeout(() => document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
-                }} className="text-left py-2 hover:text-[#c9a24b]">FAQS</button>
-                <button onClick={() => { setActiveTab('contact'); setIsMobileMenuOpen(false); }} className="text-left py-2 hover:text-[#c9a24b]">CONTACT US</button>
+                }} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50 text-left">
+                  <HelpCircle className="w-[22px] h-[22px] text-red-500" strokeWidth={2} />
+                  <span className="font-bold text-[#3B1A4A] text-[15px]">FAQs</span>
+                </button>
+                <button onClick={() => { setActiveTab('contact'); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50 text-left">
+                  <Phone className="w-[22px] h-[22px] text-gray-600" strokeWidth={2} fill="currentColor" fillOpacity={0.8} />
+                  <span className="font-bold text-[#3B1A4A] text-[15px]">Contact Us</span>
+                </button>
               </div>
 
-              {/* Action Icons (Moved from main navbar) */}
-              <button onClick={() => { setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 hover:text-[#c9a24b]">
-                <Search className="w-5 h-5" /> SEARCH
-              </button>
+              <div className="border-t border-gray-100 my-1 w-full" />
+
+              {/* Saree Types Section */}
+              <div className="flex flex-col py-4">
+                <span className="px-5 text-[11px] font-bold tracking-[0.1em] text-[#c9a24b] uppercase mb-2">SAREE TYPES AVAILABLE</span>
+                
+                <button onClick={() => { setActiveTab('shop'); setIsMobileMenuOpen(false); }} className="flex items-center gap-3 px-5 py-3 hover:bg-gray-50 text-left text-[#8C1D35]">
+                  <span className="text-[20px] leading-none font-black mb-0.5">•</span>
+                  <span className="font-bold text-[15px]">All Sarees</span>
+                </button>
+
+                {CATEGORIES.filter(c => c.name !== 'All Sarees' && c.name !== 'All').map((cat, idx) => (
+                  <button key={idx} onClick={() => { setActiveTab('shop'); setIsMobileMenuOpen(false); }} className="flex items-center gap-3 px-5 py-3 hover:bg-gray-50 text-left text-[#3B1A4A]">
+                    <span className="text-[20px] leading-none font-black mb-0.5">•</span>
+                    <span className="font-bold text-[15px]">{cat.name}</span>
+                  </button>
+                ))}
+
+              </div>
               
-              <button onClick={() => { onOpenAccount(); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 hover:text-[#c9a24b]">
-                <User className="w-5 h-5" /> ACCOUNT
-              </button>
-              
-              <button onClick={() => { onOpenWishlist(); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 hover:text-[#c9a24b]">
-                <div className="relative">
-                  <Heart className="w-5 h-5" />
-                  {wishlistCount > 0 && <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center">{wishlistCount}</span>}
-                </div>
-                WISHLIST
-              </button>
-              
-              <button onClick={() => { onOpenCart(); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 hover:text-[#c9a24b]">
-                <div className="relative">
-                  <ShoppingCart className="w-5 h-5" />
-                  {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-theme-maroon text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">{cartCount}</span>}
-                </div>
-                SHOPPING CART
-              </button>
-              
-              <button onClick={() => { onOpenAdmin(); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 text-emerald-600 hover:text-emerald-500 mt-2 border-t border-gray-100 pt-4">
-                <ShieldCheck className="w-5 h-5" /> ADMIN PORTAL
-              </button>
+              <div className="mt-auto border-t border-gray-200 bg-gray-50 pb-8">
+                {/* Account & Wishlist additions since they're not on mobile top bar */}
+                <button onClick={() => { onOpenAccount(); setIsMobileMenuOpen(false); }} className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-gray-100 text-[#3B1A4A] border-b border-gray-200">
+                  <User className="w-[22px] h-[22px]" strokeWidth={2} /> <span className="font-bold text-[15px]">Account</span>
+                </button>
+                <button onClick={() => { onOpenWishlist(); setIsMobileMenuOpen(false); }} className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-gray-100 text-[#3B1A4A] border-b border-gray-200">
+                  <div className="flex items-center gap-4">
+                    <Heart className="w-[22px] h-[22px]" strokeWidth={2} /> 
+                    <span className="font-bold text-[15px]">Wishlist</span>
+                  </div>
+                  {wishlistCount > 0 && <span className="bg-rose-500 text-white text-[11px] w-5 h-5 rounded-full flex items-center justify-center font-bold">{wishlistCount}</span>}
+                </button>
+                
+                {/* Admin Portal link at the bottom */}
+                <button onClick={() => { onOpenAdmin(); setIsMobileMenuOpen(false); }} className="w-full flex items-center gap-4 px-5 py-4 text-emerald-600 hover:bg-gray-100">
+                  <ShieldCheck className="w-[22px] h-[22px]" /> <span className="font-bold text-[15px]">Admin Portal</span>
+                </button>
+              </div>
+
             </div>
           </div>
         )}
