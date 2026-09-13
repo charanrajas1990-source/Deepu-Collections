@@ -27,13 +27,13 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
-        <div className="flex flex-row justify-between items-end mb-5 md:mb-8 border-b border-gray-200 pb-4">
-          <div className="relative">
-            <h2 className="font-serif text-2xl md:text-4xl font-bold tracking-wide text-[#3B1A4A]">
+        <div className="flex flex-row justify-between items-end mb-6 md:mb-8 pb-2">
+          <div>
+            <h2 className="font-serif text-2xl md:text-4xl font-bold tracking-wide text-[#8C1D35]">
               Explore Categories
             </h2>
-            {/* Small yellow underline */}
-            <div className="absolute -bottom-[17px] left-0 w-16 h-1 bg-[#c9a24b]"></div>
+            {/* Small maroon underline */}
+            <div className="w-[100px] h-[3px] bg-[#8C1D35] mt-2"></div>
           </div>
           <span className="text-[#c9a24b] text-[10px] md:text-sm font-bold tracking-widest uppercase mb-1">
             Our Specialities
@@ -48,19 +48,22 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
               <div
                 key={idx}
                 onClick={() => handleCategoryClick(cat.name)}
-                className="group cursor-pointer flex flex-col items-center shrink-0 snap-start"
+                className="cursor-pointer flex flex-col items-center shrink-0 snap-start w-[160px] md:w-auto"
               >
-                <div className={`w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] md:w-full md:aspect-[3/4] md:h-auto rounded-2xl overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'ring-2 ring-[#c9a24b] ring-offset-2 shadow-md' : 'border border-gray-200 hover:border-[#c9a24b] hover:shadow-md'}`}>
+                <div className={`w-full aspect-square rounded-xl overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'border-[3px] border-[#c9a24b] shadow-md' : ''}`}>
                   <img
                     src={cat.image}
                     alt={cat.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
-                <h3 className={`font-serif font-bold text-sm md:text-sm font-medium tracking-wide mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-theme-maroon group-hover:text-[#c9a24b]'}`}>
-                  <span className={`${isActive ? 'border-b-2 border-[#c9a24b]' : ''}`}>{cat.name}</span>
-                </h3>
+                <div className={`mt-3 flex items-center justify-center transition-colors ${isActive ? 'text-[#8C1D35] border-b-2 border-[#8C1D35] pb-0.5' : 'text-[#3B1A4A]'}`}>
+                  <h3 className="font-sans font-bold text-[13px] md:text-[15px] tracking-wide">
+                    {cat.name}
+                  </h3>
+                  <span className="font-bold text-base leading-none ml-1">→</span>
+                </div>
               </div>
             );
           })}
