@@ -280,8 +280,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="p-6 bg-[#FCF6E8] space-y-4 border-t border-[#E5D9C5] shrink-0">
               <div className="space-y-3 text-[14px] text-[#5c4033] tracking-wide">
                 <div className="flex justify-between">
-                  <span className="opacity-90">Items Weight:</span>
-                  <span className="opacity-90">0g</span>
+                  <span className="opacity-90">Sarees:</span>
+                  <span className="opacity-90">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="opacity-90">Subtotal:</span>
