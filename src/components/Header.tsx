@@ -148,10 +148,10 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Icons */}
         <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195]">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#3B1A4A]">
             {isMobileMenuOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />}
           </button>
-          <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195] relative">
+          <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#3B1A4A] relative">
             <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2.5} />
             {cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
