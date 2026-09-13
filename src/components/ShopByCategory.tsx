@@ -58,8 +58,8 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                   />
                 </div>
 
-                <div className={`mt-3 flex items-center justify-center transition-colors ${isActive ? 'text-[#8C1D35] border-b-[2px] border-[#8C1D35] pb-0.5' : 'text-[#3B1A4A]'}`}>
-                  <h3 className="font-serif font-bold text-[14px] md:text-[16px] tracking-wide">
+                <div className={`mt-3 flex items-center justify-center transition-colors ${isActive ? 'text-[#8C1D35]' : 'text-[#3B1A4A]'}`}>
+                  <h3 className={`font-serif font-bold text-[14px] md:text-[16px] tracking-wide ${isActive ? 'border-b-[2px] border-[#8C1D35] pb-0.5' : ''}`}>
                     {cat.name}
                   </h3>
                   <span className="font-bold text-base leading-none ml-1">→</span>
