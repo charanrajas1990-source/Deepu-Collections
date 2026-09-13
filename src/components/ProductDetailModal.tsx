@@ -76,7 +76,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               )}
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#2A0845] mb-3">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-theme-maroon mb-3">
               {product.name}
             </h2>
 
@@ -127,7 +127,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 >
                   -
                 </button>
-                <span className="font-semibold text-[#2A0845] w-6 text-center">{quantity}</span>
+                <span className="font-semibold text-theme-maroon w-6 text-center">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
                   className="w-9 h-9 rounded-lg border border-gray-300 flex items-center justify-center text-gray-700 hover:bg-gray-100 font-bold"

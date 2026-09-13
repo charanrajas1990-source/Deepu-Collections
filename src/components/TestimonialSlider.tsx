@@ -21,7 +21,7 @@ export const TestimonialSlider: React.FC = () => {
               <div className="text-[#c9a24b] text-xl mb-4">★★★★★</div>
               <p className="text-gray-300 italic mb-6 flex-grow">"{r.text}"</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#c9a24b] text-[#2A0845] font-bold flex items-center justify-center text-xl">
+                <div className="w-12 h-12 rounded-full bg-[#c9a24b] text-theme-maroon font-bold flex items-center justify-center text-xl">
                   {r.name.charAt(0)}
                 </div>
                 <div>

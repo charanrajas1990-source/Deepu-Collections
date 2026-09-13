@@ -30,16 +30,16 @@ export const Footer: React.FC = () => {
               Bringing authentic Indian handlooms, rich Katan silks, Peshwai Nauvaris, and royal bridal lehengas directly from master weavers to your wardrobe.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a href="#instagram" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-[#2A0845] transition-colors" title="Instagram">
+              <a href="#instagram" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-theme-maroon transition-colors" title="Instagram">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#facebook" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-[#2A0845] transition-colors" title="Facebook">
+              <a href="#facebook" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-theme-maroon transition-colors" title="Facebook">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#twitter" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-[#2A0845] transition-colors" title="Twitter">
+              <a href="#twitter" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-theme-maroon transition-colors" title="Twitter">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#youtube" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-[#2A0845] transition-colors" title="YouTube">
+              <a href="#youtube" className="p-2.5 rounded-full bg-white/10 hover:bg-[#c9a24b] hover:text-theme-maroon transition-colors" title="YouTube">
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#c9a24b] hover:bg-[#b89139] text-[#2A0845] font-bold py-2.5 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#c9a24b] hover:bg-[#b89139] text-theme-maroon font-bold py-2.5 px-4 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
                 >
                   Subscribe <Send className="w-3.5 h-3.5" />
                 </button>

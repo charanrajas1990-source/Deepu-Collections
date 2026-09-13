@@ -19,7 +19,7 @@ export const CarouselSection: React.FC<CarouselSectionProps> = ({
   title,
   subtitle,
   products,
-  bgColor = 'bg-[#F7F2FA]',
+  bgColor = 'bg-theme-cream',
   isDarkTheme = false,
   onSelectProduct,
   onAddToCart,
@@ -49,7 +49,7 @@ export const CarouselSection: React.FC<CarouselSectionProps> = ({
                 {subtitle}
               </span>
             )}
-            <h2 className={`text-3xl md:text-4xl font-serif font-bold mt-1 ${isDarkTheme ? 'text-white' : 'text-[#2A0845]'}`}>
+            <h2 className={`text-3xl md:text-4xl font-serif font-bold mt-1 ${isDarkTheme ? 'text-white' : 'text-theme-maroon'}`}>
               {title}
             </h2>
           </div>

@@ -12,7 +12,7 @@ export const FaqDemo: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq-section" className="scroll-mt-24 md:scroll-mt-32 py-16 px-4 md:px-8 bg-[#fcfbf9]">
+    <section id="faq-section" className="scroll-mt-24 md:scroll-mt-32 py-16 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#5C167D]">Frequently Asked Questions</h2>
@@ -29,7 +29,7 @@ export const FaqDemo: React.FC = () => {
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 className="w-full flex items-center justify-between p-4 md:p-6 text-left focus:outline-none"
               >
-                <span className="font-bold text-[#2A0845]">{faq.q}</span>
+                <span className="font-bold text-theme-maroon">{faq.q}</span>
                 {openIdx === idx ? <ChevronUp className="text-[#c9a24b] w-5 h-5" /> : <ChevronDown className="text-gray-400 w-5 h-5" />}
               </button>
               {openIdx === idx && (

@@ -24,10 +24,10 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn">
       <div className="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between">
-        <div className="p-6 border-b border-purple-100 flex items-center justify-between bg-[#F7F2FA]">
+        <div className="p-6 border-b border-purple-100 flex items-center justify-between bg-theme-cream">
           <div className="flex items-center gap-2">
             <Heart className="w-5 h-5 text-rose-500 fill-current" />
-            <h2 className="font-serif font-bold text-xl text-[#2A0845]">My Wishlist</h2>
+            <h2 className="font-serif font-bold text-xl text-theme-maroon">My Wishlist</h2>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-white rounded-full text-gray-700 transition-colors">
             <X className="w-5 h-5" />
@@ -60,7 +60,7 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
                         onSelectProduct(product);
                         onClose();
                       }}
-                      className="font-serif font-medium text-[#2A0845] text-sm line-clamp-1 cursor-pointer hover:text-[#5C167D]"
+                      className="font-serif font-medium text-theme-maroon text-sm line-clamp-1 cursor-pointer hover:text-[#5C167D]"
                     >
                       {product.name}
                     </h4>

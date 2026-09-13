@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'theme-cream': '#FDFBF7',
-        'theme-maroon': '#4A2F1D',
+        'theme-cream': '#EDE8F5',
+        'theme-maroon': '#3B1A4A',
         'theme-lining': '#5C167D'
       }
     },

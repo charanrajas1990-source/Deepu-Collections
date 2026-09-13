@@ -23,7 +23,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
   };
 
   return (
-    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-20 px-4 md:px-8 bg-[#fcfbf9]">
+    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-20 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
@@ -58,7 +58,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                   />
                 </div>
 
-                <h3 className={`font-serif font-bold text-sm md:text-sm font-medium tracking-wide mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-[#2A0845] group-hover:text-[#c9a24b]'}`}>
+                <h3 className={`font-serif font-bold text-sm md:text-sm font-medium tracking-wide mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-theme-maroon group-hover:text-[#c9a24b]'}`}>
                   <span className={`${isActive ? 'border-b-2 border-[#c9a24b]' : ''}`}>{cat.name}</span>
                 </h3>
               </div>

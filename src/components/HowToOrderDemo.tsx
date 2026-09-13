@@ -20,11 +20,11 @@ export const HowToOrderDemo: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {steps.map((step, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center p-6 bg-[#fcfbf9] rounded-2xl shadow-sm border border-gray-100 hover:border-[#c9a24b] transition-colors">
+            <div key={idx} className="flex flex-col items-center text-center p-6 bg-theme-cream rounded-2xl shadow-sm border border-gray-100 hover:border-[#c9a24b] transition-colors">
               <div className="w-16 h-16 rounded-full bg-[#f2ebd9] flex items-center justify-center text-[#5C167D] mb-4">
                 {step.icon}
               </div>
-              <h3 className="font-bold text-[#2A0845] mb-2">{step.title}</h3>
+              <h3 className="font-bold text-theme-maroon mb-2">{step.title}</h3>
               <p className="text-sm text-gray-600">{step.desc}</p>
             </div>
           ))}

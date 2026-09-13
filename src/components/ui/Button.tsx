@@ -9,7 +9,7 @@ export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', c
   const variants = {
     primary: "bg-[#5C167D] text-white hover:bg-[#4A1066]",
     secondary: "bg-[#c9a24b] text-white hover:bg-[#b89139]",
-    outline: "border-2 border-[#5C167D] text-[#5C167D] hover:bg-[#F7F2FA]",
+    outline: "border-2 border-[#5C167D] text-[#5C167D] hover:bg-theme-cream",
   };
 
   return (

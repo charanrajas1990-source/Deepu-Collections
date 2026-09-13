@@ -18,7 +18,7 @@ export const TrustBanner: React.FC = () => {
               <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#5C167D] text-[#c9a24b] flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
                 {t.icon}
               </div>
-              <h4 className="font-bold text-[#2A0845] text-sm md:text-base mb-1">{t.title}</h4>
+              <h4 className="font-bold text-theme-maroon text-sm md:text-base mb-1">{t.title}</h4>
               <p className="text-xs md:text-sm text-gray-600 px-2">{t.desc}</p>
             </div>
           ))}

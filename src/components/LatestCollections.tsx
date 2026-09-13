@@ -13,7 +13,7 @@ export const LatestCollections: React.FC<LatestCollectionsProps> = ({ onExploreC
           <span className="text-[#5C167D] text-sm font-semibold tracking-widest uppercase">
             Heritage & Craft
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#2A0845] mt-2">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-theme-maroon mt-2">
             Latest Collections
           </h2>
         </div>
@@ -34,7 +34,7 @@ export const LatestCollections: React.FC<LatestCollectionsProps> = ({ onExploreC
               <div>
                 <button
                   onClick={() => onExploreCollection('Banarsi Silk')}
-                  className="bg-white hover:bg-[#c9a24b] text-[#2A0845] font-bold px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2 text-sm shadow"
+                  className="bg-white hover:bg-[#c9a24b] text-theme-maroon font-bold px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2 text-sm shadow"
                 >
                   Explore Collection <ArrowRight className="w-4 h-4" />
                 </button>
@@ -57,7 +57,7 @@ export const LatestCollections: React.FC<LatestCollectionsProps> = ({ onExploreC
               <div>
                 <button
                   onClick={() => onExploreCollection('Rajasthan')}
-                  className="bg-white hover:bg-[#c9a24b] text-[#2A0845] font-bold px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2 text-sm shadow"
+                  className="bg-white hover:bg-[#c9a24b] text-theme-maroon font-bold px-6 py-3 rounded-full transition-colors inline-flex items-center gap-2 text-sm shadow"
                 >
                   Explore Collection <ArrowRight className="w-4 h-4" />
                 </button>

@@ -78,7 +78,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onAddToCart(product, e);
             }}
-            className="w-full py-2.5 sm:py-3 bg-[#c9a24b] text-[#2A0845] text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-[#b89139] transition-colors rounded-lg shadow-sm hover:shadow flex justify-center items-center gap-2"
+            className="w-full py-2.5 sm:py-3 bg-[#c9a24b] text-theme-maroon text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-[#b89139] transition-colors rounded-lg shadow-sm hover:shadow flex justify-center items-center gap-2"
           >
             <ShoppingBag className="w-4 h-4" /> ADD TO CART
           </button>

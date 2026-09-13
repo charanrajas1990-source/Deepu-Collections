@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
         
         {/* Bright HTML Overlay Button for Mobile (Covers baked-in text) */}
         <button 
-          className="md:hidden absolute bg-[#eab308] text-[#2A0845] font-bold text-sm sm:text-base rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
+          className="md:hidden absolute bg-[#eab308] text-theme-maroon font-bold text-sm sm:text-base rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
           style={{
             left: '50%',
             transform: 'translateX(-50%)',
@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
 
         {/* New Smaller HTML Overlay Button for Desktop */}
         <button 
-          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-base rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
+          className="hidden md:flex absolute bg-[#eab308] text-theme-maroon font-bold text-base rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
           style={{
             left: '67%',
             transform: 'translateX(-50%)',

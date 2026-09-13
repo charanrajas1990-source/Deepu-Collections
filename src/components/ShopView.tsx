@@ -53,7 +53,7 @@ export const ShopView: React.FC<ShopViewProps> = ({
       {filtered.length === 0 ? (
         <div className="text-center py-20 bg-white rounded-2xl border border-purple-100">
           <Search className="w-12 h-12 mx-auto text-gray-300 mb-3" />
-          <h3 className="font-serif text-xl font-bold text-[#2A0845]">No sarees found</h3>
+          <h3 className="font-serif text-xl font-bold text-theme-maroon">No sarees found</h3>
           <p className="text-gray-500 text-xs mt-1">Try searching with another keyword.</p>
         </div>
       ) : (

@@ -44,10 +44,10 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
         </button>
 
         <div className="text-center mb-6">
-          <div className="w-14 h-14 bg-[#F7F2FA] rounded-full flex items-center justify-center mx-auto mb-3 text-[#5C167D]">
+          <div className="w-14 h-14 bg-theme-cream rounded-full flex items-center justify-center mx-auto mb-3 text-[#5C167D]">
             <User className="w-7 h-7" />
           </div>
-          <h3 className="font-serif text-2xl font-bold text-[#2A0845]">Deepu's Collection Account</h3>
+          <h3 className="font-serif text-2xl font-bold text-theme-maroon">Deepu's Collection Account</h3>
           <p className="text-gray-500 text-xs mt-1">Track orders, wishlist & exclusive offers</p>
         </div>
 
@@ -56,7 +56,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose, onO
             <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h4 className="font-serif font-bold text-lg text-[#2A0845]">Welcome Back, Deepu Patron!</h4>
+            <h4 className="font-serif font-bold text-lg text-theme-maroon">Welcome Back, Deepu Patron!</h4>
             <p className="text-gray-600 text-xs">Logged in via +91 {phone}</p>
             <div className="pt-4 flex flex-col gap-2">
               <button

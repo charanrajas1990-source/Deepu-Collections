@@ -100,7 +100,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
         {!isAuthenticated ? (
           <div className="p-12 max-w-md mx-auto my-auto text-center">
-            <h3 className="font-serif text-2xl font-bold text-[#2A0845] mb-2">Admin Authentication</h3>
+            <h3 className="font-serif text-2xl font-bold text-theme-maroon mb-2">Admin Authentication</h3>
             <p className="text-gray-500 text-xs mb-6">Enter admin passcode to access inventory and orders.</p>
             <form onSubmit={handleLogin} className="space-y-4">
               {error && <p className="text-red-500 text-xs text-center">{error}</p>}
@@ -158,7 +158,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               {activeTab === 'products' && (
                 <button
                   onClick={() => setIsAdding(!isAdding)}
-                  className="bg-[#c9a24b] hover:bg-[#b89139] text-[#2A0845] text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow"
+                  className="bg-[#c9a24b] hover:bg-[#b89139] text-theme-maroon text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow"
                 >
                   <Plus className="w-4 h-4" /> Add Product
                 </button>
@@ -167,21 +167,21 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
             <div className="p-6 bg-gray-50 grid grid-cols-1 sm:grid-cols-3 gap-4 border-b border-purple-100">
               <div className="bg-white p-4 rounded-xl border border-purple-50 shadow-sm flex items-center gap-3">
-                <Package className="w-8 h-8 text-[#5C167D] p-2 bg-[#F7F2FA] rounded-lg" />
+                <Package className="w-8 h-8 text-[#5C167D] p-2 bg-theme-cream rounded-lg" />
                 <div>
                   <span className="text-xs text-gray-500 font-medium">Total Products</span>
-                  <p className="font-serif font-bold text-xl text-[#2A0845]">{products.length}</p>
+                  <p className="font-serif font-bold text-xl text-theme-maroon">{products.length}</p>
                 </div>
               </div>
               <div className="bg-white p-4 rounded-xl border border-purple-50 shadow-sm flex items-center gap-3">
-                <Users className="w-8 h-8 text-[#5C167D] p-2 bg-[#F7F2FA] rounded-lg" />
+                <Users className="w-8 h-8 text-[#5C167D] p-2 bg-theme-cream rounded-lg" />
                 <div>
                   <span className="text-xs text-gray-500 font-medium">Total Orders</span>
-                  <p className="font-serif font-bold text-xl text-[#2A0845]">{orders.length}</p>
+                  <p className="font-serif font-bold text-xl text-theme-maroon">{orders.length}</p>
                 </div>
               </div>
               <div className="bg-white p-4 rounded-xl border border-purple-50 shadow-sm flex items-center gap-3">
-                <DollarSign className="w-8 h-8 text-[#5C167D] p-2 bg-[#F7F2FA] rounded-lg" />
+                <DollarSign className="w-8 h-8 text-[#5C167D] p-2 bg-theme-cream rounded-lg" />
                 <div>
                   <span className="text-xs text-gray-500 font-medium">Total Revenue</span>
                   <p className="font-serif font-bold text-xl text-[#5C167D]">₹{totalRevenue.toLocaleString('en-IN')}</p>
@@ -193,7 +193,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               {isAdding && (
                 <div className="bg-white p-6 rounded-2xl border border-purple-200 mb-6 shadow-md animate-fadeIn">
                   <div className="flex justify-between items-center mb-4">
-                    <h4 className="font-serif font-bold text-lg text-[#2A0845]">Add New Saree Product</h4>
+                    <h4 className="font-serif font-bold text-lg text-theme-maroon">Add New Saree Product</h4>
                     <button onClick={() => setIsAdding(false)} className="text-gray-400 hover:text-gray-600">
                       <X className="w-4 h-4" />
                     </button>
@@ -282,7 +282,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 <div className="bg-white rounded-2xl border border-purple-100 overflow-hidden shadow-sm">
                   <table className="w-full text-left border-collapse">
                     <thead>
-                      <tr className="bg-[#F7F2FA] text-[#5C167D] text-xs font-bold uppercase tracking-wider border-b border-purple-100">
+                      <tr className="bg-theme-cream text-[#5C167D] text-xs font-bold uppercase tracking-wider border-b border-purple-100">
                         <th className="p-4">Saree</th>
                         <th className="p-4">Name</th>
                         <th className="p-4">Category</th>
@@ -296,7 +296,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                           <td className="p-4">
                             <img src={p.image} alt="" className="w-12 h-14 object-cover rounded-lg shadow-sm" />
                           </td>
-                          <td className="p-4 font-serif font-medium text-[#2A0845]">{p.name}</td>
+                          <td className="p-4 font-serif font-medium text-theme-maroon">{p.name}</td>
                           <td className="p-4 text-xs font-semibold text-purple-700">{p.category}</td>
                           <td className="p-4 font-bold text-[#5C167D]">₹{p.price.toLocaleString('en-IN')}</td>
                           <td className="p-4 text-right">
@@ -323,7 +323,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   ) : (
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="bg-[#F7F2FA] text-[#5C167D] text-xs font-bold uppercase tracking-wider border-b border-purple-100">
+                        <tr className="bg-theme-cream text-[#5C167D] text-xs font-bold uppercase tracking-wider border-b border-purple-100">
                           <th className="p-4">Order ID</th>
                           <th className="p-4">Customer</th>
                           <th className="p-4">Phone</th>
@@ -336,7 +336,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                         {orders.map((o) => (
                           <tr key={o.id} className="hover:bg-purple-50/40 transition-colors">
                             <td className="p-4 font-bold text-[#5C167D]">{o.id}</td>
-                            <td className="p-4 font-medium text-[#2A0845]">{o.customerName}</td>
+                            <td className="p-4 font-medium text-theme-maroon">{o.customerName}</td>
                             <td className="p-4 text-xs text-gray-600">{o.customerPhone}</td>
                             <td className="p-4 text-xs text-gray-600">{o.items.length} items</td>
                             <td className="p-4 font-bold text-emerald-600">₹{o.totalAmount.toLocaleString('en-IN')}</td>

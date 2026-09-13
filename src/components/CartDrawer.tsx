@@ -80,10 +80,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn" onClick={onClose}>
       <div className="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between" onClick={(e) => e.stopPropagation()}>
-        <div className="p-6 border-b border-purple-100 flex items-center justify-between bg-[#F7F2FA]">
+        <div className="p-6 border-b border-purple-100 flex items-center justify-between bg-theme-cream">
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-[#5C167D]" />
-            <h2 className="font-serif font-bold text-xl text-[#2A0845]">Your Shopping Cart</h2>
+            <h2 className="font-serif font-bold text-xl text-theme-maroon">Your Shopping Cart</h2>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-white rounded-full text-gray-700 transition-colors">
             <X className="w-5 h-5" />
@@ -95,7 +95,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-4 animate-bounce">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-[#2A0845] mb-2">Order Successful!</h3>
+            <h3 className="font-serif text-2xl font-bold text-theme-maroon mb-2">Order Successful!</h3>
             <p className="text-gray-600 text-sm mb-6">
               Thank you for shopping with Deepu's Collection. Order ID: <strong className="text-[#5C167D]">{orderCompleted.id}</strong>
             </p>
@@ -123,7 +123,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         ) : isCheckoutModalOpen ? (
           <div className="p-6 flex-grow overflow-y-auto">
             <div className="mb-6 flex items-center justify-between">
-              <h3 className="font-serif font-bold text-lg text-[#2A0845]">Razorpay Secure Checkout</h3>
+              <h3 className="font-serif font-bold text-lg text-theme-maroon">Razorpay Secure Checkout</h3>
               <button
                 onClick={() => setIsCheckoutModalOpen(false)}
                 className="text-xs text-purple-700 hover:underline"
@@ -169,7 +169,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 />
               </div>
 
-              <div className="bg-[#F7F2FA] p-4 rounded-xl border border-purple-100 my-4">
+              <div className="bg-theme-cream p-4 rounded-xl border border-purple-100 my-4">
                 <div className="flex justify-between text-sm text-gray-600 mb-1">
                   <span>Total Amount Payable:</span>
                   <span className="font-bold text-[#5C167D] text-base">₹{finalTotal.toLocaleString('en-IN')}</span>
@@ -205,7 +205,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     />
                     <div className="flex flex-col justify-between flex-grow">
                       <div>
-                        <h4 className="font-serif font-medium text-[#2A0845] text-sm line-clamp-1">
+                        <h4 className="font-serif font-medium text-theme-maroon text-sm line-clamp-1">
                           {item.product.name}
                         </h4>
                         <span className="text-xs text-gray-500">Size: {item.selectedSize}</span>
@@ -246,14 +246,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
 
             {cartItems.length > 0 && (
-              <div className="p-6 border-t border-purple-100 bg-[#F7F2FA] space-y-4">
+              <div className="p-6 border-t border-purple-100 bg-theme-cream space-y-4">
                 <form onSubmit={handleApplyPromo} className="flex gap-2">
                   <input
                     type="text"
                     placeholder="Promo Code (EXTRA20)"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    className="flex-grow bg-white border border-purple-200 rounded-xl px-3 py-2 text-xs text-[#2A0845] uppercase focus:outline-none"
+                    className="flex-grow bg-white border border-purple-200 rounded-xl px-3 py-2 text-xs text-theme-maroon uppercase focus:outline-none"
                   />
                   <button
                     type="submit"
@@ -274,7 +274,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       <span>-₹{Math.round(discount).toLocaleString('en-IN')}</span>
                     </div>
                   )}
-                  <div className="flex justify-between text-sm font-bold text-[#2A0845] pt-2 border-t border-purple-200">
+                  <div className="flex justify-between text-sm font-bold text-theme-maroon pt-2 border-t border-purple-200">
                     <span>Total:</span>
                     <span className="text-[#5C167D]">₹{finalTotal.toLocaleString('en-IN')}</span>
                   </div>
@@ -282,7 +282,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                 <button
                   onClick={() => setIsCheckoutModalOpen(true)}
-                  className="w-full bg-[#c9a24b] hover:bg-[#b89139] text-[#2A0845] font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
+                  className="w-full bg-[#c9a24b] hover:bg-[#b89139] text-theme-maroon font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm"
                 >
                   Proceed to Checkout <ArrowRight className="w-4 h-4" />
                 </button>

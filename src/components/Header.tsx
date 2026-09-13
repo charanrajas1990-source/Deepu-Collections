@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[#fcfbf9] text-[#2A0845] px-3 sm:px-4 md:px-8 py-3 md:py-4 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
+      <div className="bg-theme-cream text-theme-maroon px-3 sm:px-4 md:px-8 py-3 md:py-4 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
         
         {/* Left: Logo and Text */}
         <div 
@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             {/* Dropdown Box */}
             {isSareeMenuOpen && (
-              <div className="absolute top-full left-0 bg-[#fcfbf9] border-t-2 border-[#c9a24b] shadow-xl w-56 py-2 z-50 flex-col gap-1 rounded-b-md flex">
+              <div className="absolute top-full left-0 bg-theme-cream border-t-2 border-[#c9a24b] shadow-xl w-56 py-2 z-50 flex-col gap-1 rounded-b-md flex">
                 {categories.map((cat) => (
                   <button 
                     key={cat} 
@@ -173,7 +173,7 @@ export const Header: React.FC<HeaderProps> = ({
           />
         )}
         {isMobileMenuOpen && (
-          <div className="absolute right-0 top-full w-1/2 md:w-72 bg-[#fcfbf9] border-t border-l border-gray-200 md:border md:rounded-bl-xl px-4 md:px-6 py-4 flex flex-col gap-4 shadow-xl z-50 h-[100vh] overflow-y-auto pb-32">
+          <div className="absolute right-0 top-full w-1/2 md:w-72 bg-theme-cream border-t border-l border-gray-200 md:border md:rounded-bl-xl px-4 md:px-6 py-4 flex flex-col gap-4 shadow-xl z-50 h-[100vh] overflow-y-auto pb-32">
             <div className="flex flex-col gap-3 text-sm font-semibold tracking-widest text-[#5C167D]">
               
               {/* Mobile-only page links */}
@@ -218,7 +218,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button onClick={() => { onOpenCart(); setIsMobileMenuOpen(false); }} className="flex items-center gap-4 py-2 hover:text-[#c9a24b]">
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5" />
-                  {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-[#2A0845] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">{cartCount}</span>}
+                  {cartCount > 0 && <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-theme-maroon text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">{cartCount}</span>}
                 </div>
                 SHOPPING CART
               </button>

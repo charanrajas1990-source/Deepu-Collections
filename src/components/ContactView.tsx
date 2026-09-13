@@ -18,7 +18,7 @@ export const ContactView: React.FC = () => {
     <div className="py-16 px-4 md:px-8 max-w-5xl mx-auto">
       <div className="text-center mb-12">
         <span className="text-[#5C167D] text-sm font-semibold tracking-widest uppercase">Get In Touch</span>
-        <h1 className="font-serif text-4xl font-bold text-[#2A0845] mt-2">Contact Deepu's Collection</h1>
+        <h1 className="font-serif text-4xl font-bold text-theme-maroon mt-2">Contact Deepu's Collection</h1>
         <p className="text-gray-600 text-sm mt-2">We would love to assist you with saree styling, wedding orders, or inquiries.</p>
       </div>
 
@@ -50,7 +50,7 @@ export const ContactView: React.FC = () => {
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h3 className="font-serif text-2xl font-bold text-[#2A0845]">Message Sent Successfully!</h3>
+              <h3 className="font-serif text-2xl font-bold text-theme-maroon">Message Sent Successfully!</h3>
               <p className="text-gray-600 text-sm">Thank you for reaching out. Our fashion consultant will get back to you shortly.</p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -61,7 +61,7 @@ export const ContactView: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <h3 className="font-serif text-2xl font-bold text-[#2A0845] mb-6">Send Us a Message</h3>
+              <h3 className="font-serif text-2xl font-bold text-theme-maroon mb-6">Send Us a Message</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Your Name</label>

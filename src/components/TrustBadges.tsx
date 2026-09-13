@@ -26,7 +26,7 @@ export const TrustBadges: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-[#F7F2FA] border-y border-purple-100">
+    <section className="py-16 px-4 md:px-8 bg-theme-cream border-y border-purple-100">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {badges.map((b, idx) => (
           <div
@@ -37,7 +37,7 @@ export const TrustBadges: React.FC = () => {
               {b.icon}
             </div>
             <div>
-              <h4 className="font-serif font-bold text-[#2A0845] text-base mb-1">
+              <h4 className="font-serif font-bold text-theme-maroon text-base mb-1">
                 {b.title}
               </h4>
               <p className="text-gray-600 text-xs leading-relaxed">
