@@ -32,7 +32,7 @@ export const ShopView: React.FC<ShopViewProps> = ({
   }, [initialCategory]);
 
   const filtered = products.filter((p) => {
-    const matchesCat = selectedCategory === 'All' || p.category === selectedCategory;
+    const matchesCat = selectedCategory === 'All' || selectedCategory === 'All Sarees' || p.category === selectedCategory;
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || p.fabric.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCat && matchesSearch;
   });
