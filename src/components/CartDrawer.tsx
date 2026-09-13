@@ -78,8 +78,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn">
-      <div className="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn" onClick={onClose}>
+      <div className="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between" onClick={(e) => e.stopPropagation()}>
         <div className="p-6 border-b border-purple-100 flex items-center justify-between bg-[#F7F2FA]">
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5 text-[#5C167D]" />

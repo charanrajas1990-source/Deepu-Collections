@@ -162,6 +162,13 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Hamburger Menu Dropdown (Visible on all screens for icons) */}
         {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            style={{ top: '100%' }} // Starts just below the header
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+        {isMobileMenuOpen && (
           <div className="absolute right-0 top-full w-1/2 md:w-72 bg-[#fcfbf9] border-t border-l border-gray-200 md:border md:rounded-bl-xl px-4 md:px-6 py-4 flex flex-col gap-4 shadow-xl z-50 h-[100vh] overflow-y-auto pb-32">
             <div className="flex flex-col gap-3 text-sm font-semibold tracking-widest text-[#5C167D]">
               
