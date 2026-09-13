@@ -16,17 +16,24 @@ export const HowToOrderDemo: React.FC = () => {
           <div className="w-16 h-1 bg-[#c9a24b] mt-2"></div>
         </div>
         
-        <div className="relative border-l border-[#e8d5c4] ml-3 md:ml-4 flex flex-col gap-6 md:gap-8 pt-2 pb-2">
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative pl-8">
-              {/* Timeline dot matching reference */}
-              <div className="absolute -left-[11px] top-1 w-[21px] h-[21px] rounded-full border-2 border-[#3B1A4A] bg-white flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#e8be1e]"></div>
+        <div className="relative mt-8 md:mt-16">
+          {/* Connecting Lines */}
+          <div className="absolute left-[11px] top-2 bottom-2 w-px bg-[#e8d5c4] md:hidden z-0"></div>
+          {/* Desktop horizontal line: spans between dots */}
+          <div className="hidden md:block absolute top-[10px] left-[12.5%] right-[12.5%] h-px bg-[#e8d5c4] z-0"></div>
+
+          <div className="flex flex-col md:flex-row gap-8 md:gap-4 relative z-10">
+            {steps.map((step, idx) => (
+              <div key={idx} className="relative flex flex-col items-start md:items-center text-left md:text-center flex-1 pl-10 md:pl-0 md:px-4">
+                {/* Timeline dot */}
+                <div className="absolute left-0 md:relative md:left-auto top-0 w-[21px] h-[21px] rounded-full border-2 border-[#3B1A4A] bg-theme-cream flex items-center justify-center shrink-0 mb-0 md:mb-4 z-10">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#e8be1e]"></div>
+                </div>
+                <h3 className="font-bold text-[#3B1A4A] text-base md:text-[15px] lg:text-base mb-1 md:mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
               </div>
-              <h3 className="font-bold text-[#3B1A4A] text-base md:text-lg mb-1">{step.title}</h3>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">{step.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
