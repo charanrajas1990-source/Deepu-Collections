@@ -2,7 +2,7 @@ import React from 'react';
 
 export const FounderSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-white border-y border-gray-100">
+    <section className="py-8 md:py-24 bg-white border-y border-gray-100">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 bg-theme-cream rounded-3xl p-6 md:p-12 shadow-sm border border-gray-200">
           <div className="w-48 h-48 md:w-72 md:h-72 shrink-0 rounded-full overflow-hidden border-4 border-[#c9a24b] shadow-xl">

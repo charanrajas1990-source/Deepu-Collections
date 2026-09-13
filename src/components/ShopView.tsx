@@ -38,7 +38,7 @@ export const ShopView: React.FC<ShopViewProps> = ({
   });
 
   return (
-    <div id="shop-products-grid" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+    <div id="shop-products-grid" className="py-6 md:py-12 px-4 md:px-8 max-w-7xl mx-auto">
       
       {/* Simple Header indicating current filter */}
       <div className="mb-8 flex justify-between items-end border-b border-gray-200 pb-2">

@@ -23,11 +23,11 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
   };
 
   return (
-    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 py-12 md:py-20 px-4 md:px-8 bg-theme-cream">
+    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 py-6 md:py-20 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
-        <div className="flex flex-row justify-between items-end mb-8 md:mb-12 border-b border-gray-200 pb-4">
+        <div className="flex flex-row justify-between items-end mb-5 md:mb-12 border-b border-gray-200 pb-4">
           <div className="relative">
             <h2 className="font-serif text-xl md:text-3xl font-bold tracking-wide text-[\#5C167D]">
               Explore Categories

@@ -12,9 +12,9 @@ export const FaqDemo: React.FC = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq-section" className="scroll-mt-24 md:scroll-mt-32 py-16 px-4 md:px-8 bg-theme-cream">
+    <section id="faq-section" className="scroll-mt-24 md:scroll-mt-32 py-8 md:py-16 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#5C167D]">Frequently Asked Questions</h2>
           <div className="w-16 h-1 bg-[#c9a24b] mx-auto mt-4"></div>
         </div>

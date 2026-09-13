@@ -10,9 +10,9 @@ export const HowToOrderDemo: React.FC = () => {
   ];
 
   return (
-    <section id="how-to-order-section" className="scroll-mt-24 md:scroll-mt-32 py-16 px-4 md:px-8 bg-white border-t border-gray-100">
+    <section id="how-to-order-section" className="scroll-mt-24 md:scroll-mt-32 py-8 md:py-16 px-4 md:px-8 bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#5C167D]">How to Order</h2>
           <p className="text-gray-500 mt-2 font-medium tracking-wide">4 Simple Steps to Get Your Beautiful Saree</p>
           <div className="w-16 h-1 bg-[#c9a24b] mx-auto mt-4"></div>

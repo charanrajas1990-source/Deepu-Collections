@@ -10,7 +10,7 @@ export const TrustBanner: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-[#f4ebd9] border-y border-[#c9a24b]/30">
+    <section className="py-6 md:py-12 bg-[#f4ebd9] border-y border-[#c9a24b]/30">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {trusts.map((t, idx) => (
