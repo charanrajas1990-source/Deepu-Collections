@@ -7,7 +7,7 @@ interface PromoBannerProps {
 
 export const PromoBanner: React.FC<PromoBannerProps> = ({ onShopWedding }) => {
   return (
-    <section className="py-8 md:py-16 px-4 md:px-8 bg-theme-cream">
+    <section className="py-8 md:py-10 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-7xl mx-auto bg-[#5C167D] rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-2 text-white relative">
         <div className="p-8 sm:p-12 md:p-16 flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 bg-rose-500/20 text-rose-300 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-md mb-6 w-max border border-rose-500/30">

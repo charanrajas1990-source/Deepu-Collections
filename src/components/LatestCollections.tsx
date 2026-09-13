@@ -7,9 +7,9 @@ interface LatestCollectionsProps {
 
 export const LatestCollections: React.FC<LatestCollectionsProps> = ({ onExploreCollection }) => {
   return (
-    <section className="py-10 md:py-20 px-4 md:px-8 bg-white">
+    <section className="py-10 md:py-12 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <span className="text-[#5C167D] text-sm font-semibold tracking-widest uppercase">
             Heritage & Craft
           </span>
