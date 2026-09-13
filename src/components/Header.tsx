@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left: Logo and Text */}
         <div 
           onClick={() => setActiveTab('home')}
-          className="flex items-center justify-start gap-2.5 cursor-pointer shrink-0"
+          className="flex items-center justify-start gap-2.5 cursor-pointer shrink-0 lg:ml-12 xl:ml-32"
         >
           <img 
             src={`${import.meta.env.BASE_URL}deepu_logo.jpg`} 
