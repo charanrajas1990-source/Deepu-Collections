@@ -74,6 +74,7 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  touch-action: manipulation;
 }
 
 /* Animations */
