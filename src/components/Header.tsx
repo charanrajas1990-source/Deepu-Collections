@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <div className="flex flex-col justify-center">
             <span 
-              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-base leading-none tracking-wider uppercase text-[#B8860B] drop-shadow-sm"
+              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-base leading-none tracking-wider uppercase text-[#7A5B12] drop-shadow-sm"
             >
               DEEPU'S COLLECTION
             </span>
