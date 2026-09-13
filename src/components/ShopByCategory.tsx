@@ -50,7 +50,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                 onClick={() => handleCategoryClick(cat.name)}
                 className="group cursor-pointer flex flex-col items-center shrink-0 snap-start"
               >
-                <div className={`w-[140px] h-[160px] md:w-full md:aspect-[4/3] md:h-auto rounded-xl overflow-hidden shadow-sm transition-all duration-300 relative ${isActive ? 'border-2 border-[#5C167D] shadow-md' : 'border border-gray-200 group-hover:border-[#5C167D]/50'}`}>
+                <div className={`w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] md:w-full md:aspect-square md:h-auto rounded-full overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'ring-4 ring-[#c9a24b] shadow-md' : 'ring-1 ring-gray-200 hover:ring-2 hover:ring-[#c9a24b]/50'}`}>
                   <img
                     src={cat.image}
                     alt={cat.name}
@@ -58,8 +58,8 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                   />
                 </div>
 
-                <h3 className={`font-serif font-bold text-sm md:text-base mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-[#2A0845] group-hover:text-[#5C167D]'}`}>
-                  <span className={`${isActive ? 'border-b-2 border-[#5C167D]' : ''}`}>{cat.name}</span> <span className="font-normal">→</span>
+                <h3 className={`font-serif font-bold text-sm md:text-base mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-[#2A0845] group-hover:text-[#c9a24b]'}`}>
+                  <span className={`${isActive ? 'border-b-2 border-[#c9a24b]' : ''}`}>{cat.name}</span>
                 </h3>
               </div>
             );
