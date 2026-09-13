@@ -23,7 +23,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
   };
 
   return (
-    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 py-6 md:py-12 px-4 md:px-8 bg-theme-cream">
+    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 pt-6 pb-2 md:pt-12 md:pb-2 px-4 md:px-8 bg-theme-cream">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
@@ -41,7 +41,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
         </div>
 
         {/* Horizontal Scroll on Mobile, Grid on Laptop */}
-        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 pb-8 snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 pb-2 snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {displayCategories.map((cat, idx) => {
             const isActive = activeCat === cat.name;
             return (
