@@ -54,19 +54,15 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm flex flex-col font-serif">
-      {/* Top thin banner */}
-      <div className="hidden md:flex bg-[#2A0845] text-[#c9a24b] py-1.5 text-xs text-center items-center justify-center gap-4 tracking-widest">
+      {/* Top thin banner - mobile only */}
+      <div className="flex md:hidden bg-[#2A0845] text-[#c9a24b] py-1.5 text-xs text-center items-center justify-center gap-4 tracking-widest">
         <span>✧</span>
-        <span className="hidden sm:inline">Timeless Traditions</span>
-        <span className="hidden sm:inline">|</span>
         <span>Elegant Choices</span>
-        <span className="hidden sm:inline">|</span>
-        <span className="hidden sm:inline">Exclusive Ethnic Wear</span>
         <span>✧</span>
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-theme-cream text-theme-maroon px-3 sm:px-4 md:px-8 py-3 md:py-2 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
+      <div className="bg-theme-cream text-theme-maroon px-3 sm:px-4 md:px-8 py-3 md:py-2 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 md:border-b-4 md:border-b-[#c9a24b] shadow-sm">
         
         {/* Left: Logo and Text */}
         <div 
@@ -80,11 +76,11 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <div className="flex flex-col justify-center">
             <span 
-              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-2xl leading-none tracking-wider sm:tracking-widest uppercase text-[#A17726]"
+              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-base leading-none tracking-wider uppercase text-[#3B1A4A]"
             >
               DEEPU'S COLLECTION
             </span>
-            <span className="font-sans font-bold text-[8px] min-[375px]:text-[9px] sm:text-[10px] md:text-base tracking-[0.15em] sm:tracking-[0.2em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
+            <span className="font-sans font-semibold text-[8px] min-[375px]:text-[9px] sm:text-[10px] md:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
 
@@ -151,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Icons */}
         <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195]">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195]">
             {isMobileMenuOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />}
           </button>
           <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195] relative">
