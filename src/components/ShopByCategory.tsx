@@ -23,8 +23,8 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
   };
 
   return (
-    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 pt-3 pb-2 md:pt-4 md:pb-2 px-4 md:px-8 bg-theme-cream">
-      <div className="max-w-7xl mx-auto">
+    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 pt-3 pb-2 md:pt-4 md:pb-2 px-4 md:px-12 lg:px-24 bg-theme-cream">
+      <div className="max-w-6xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
         <div className="flex flex-row justify-between items-end mb-6 md:mb-8 pb-2">
@@ -32,8 +32,8 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
             <h2 className="font-serif text-2xl md:text-4xl font-bold tracking-wide text-[#8C1D35]">
               Explore Categories
             </h2>
-            {/* Small maroon underline */}
-            <div className="w-[100px] h-[3px] bg-[#8C1D35] mt-2"></div>
+            {/* Small gold underline */}
+            <div className="w-[100px] h-[3px] bg-[#c9a24b] mt-2"></div>
           </div>
           <span className="text-[#c9a24b] text-[10px] md:text-sm font-bold tracking-widest uppercase mb-1">
             Our Specialities
@@ -50,7 +50,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                 onClick={() => handleCategoryClick(cat.name)}
                 className="cursor-pointer flex flex-col items-center shrink-0 snap-start w-[160px] md:w-auto"
               >
-                <div className={`w-full aspect-square rounded-xl overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'border-[3px] border-[#c9a24b] shadow-md' : ''}`}>
+                <div className={`w-full aspect-square rounded-xl overflow-hidden shadow-sm transition-all duration-300 relative mx-auto ${isActive ? 'border-[3px] border-[#8C1D35] shadow-md' : ''}`}>
                   <img
                     src={cat.image}
                     alt={cat.name}
