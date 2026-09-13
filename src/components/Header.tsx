@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 object-cover rounded-full shadow-sm" 
           />
           <div className="flex flex-col justify-center">
-            <span className="font-serif font-bold text-[1.1rem] sm:text-xl md:text-2xl leading-none text-[#B98734]">DEEPU'S COLLECTION</span>
+            <span className="font-serif font-bold text-[1.1rem] sm:text-xl md:text-2xl leading-none text-[#E6C195]">DEEPU'S COLLECTION</span>
             <span className="font-sans font-bold text-[9px] sm:text-[10px] md:text-base tracking-[0.1em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
@@ -147,10 +147,10 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Icons */}
         <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#B98734]">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195]">
             {isMobileMenuOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />}
           </button>
-          <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#B98734] relative">
+          <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#E6C195] relative">
             <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2.5} />
             {cartCount > 0 && (
               <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
