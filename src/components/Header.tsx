@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center: Desktop Links (Horizontal Line) */}
-        <div className="hidden lg:flex items-center justify-center flex-1 mx-4 gap-4 xl:gap-8 text-[10px] xl:text-xs font-bold tracking-widest text-[#5C167D] uppercase">
+        <div className="hidden lg:flex items-center justify-center flex-1 mx-4 gap-8 xl:gap-12 text-sm font-bold tracking-wider text-[#3B1A4A] uppercase">
            <button onClick={() => setActiveTab('home')} className="hover:text-[#c9a24b] transition-colors whitespace-nowrap">HOME</button>
            <button 
              onClick={() => {
