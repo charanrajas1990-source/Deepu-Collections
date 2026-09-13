@@ -184,8 +184,11 @@ export default function App() {
             
             
             <FounderSection />
+        <div className="border-b border-[#E5D9C5] w-full" />
             <TestimonialSlider />
+        <div className="border-b border-[#E5D9C5] w-full" />
             <TrustBanner />
+        <div className="border-b border-[#E5D9C5] w-full" />
             <HowToOrderDemo />
             <FaqDemo />
           </>
