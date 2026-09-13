@@ -71,16 +71,16 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Left: Logo and Text */}
         <div 
           onClick={() => setActiveTab('home')}
-          className="flex items-center justify-start gap-3 cursor-pointer shrink-0"
+          className="flex items-center justify-start gap-2.5 cursor-pointer shrink-0"
         >
           <img 
             src={`${import.meta.env.BASE_URL}deepu_logo.jpg`} 
             alt="Logo" 
-            className="w-12 h-12 md:w-16 md:h-16 object-cover rounded-full shadow-sm" 
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 object-cover rounded-full shadow-sm" 
           />
           <div className="flex flex-col justify-center">
-            <span className="font-serif font-bold text-xl md:text-2xl leading-none text-[#6D1B2F]">DEEPU'S COLLECTION</span>
-            <span className="font-sans font-bold text-[10px] sm:text-[11px] md:text-base tracking-[0.1em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
+            <span className="font-serif font-bold text-[1.1rem] sm:text-xl md:text-2xl leading-none text-[#6D1B2F]">DEEPU'S COLLECTION</span>
+            <span className="font-sans font-bold text-[9px] sm:text-[10px] md:text-base tracking-[0.1em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
 
@@ -146,7 +146,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Right: Icons */}
-        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#6D1B2F]">
             {isMobileMenuOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />}
           </button>
