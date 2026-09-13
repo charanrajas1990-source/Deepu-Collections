@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <div className="flex flex-col justify-center">
             <span 
-              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-2xl leading-none tracking-wider sm:tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#D4AF37] via-[#B98734] to-[#6F5442]"
+              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-2xl leading-none tracking-wider sm:tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#E5B842] via-[#E1AF3C] to-[#A17726]"
             >
               DEEPU'S COLLECTION
             </span>
