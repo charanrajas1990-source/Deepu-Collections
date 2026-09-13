@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm flex flex-col font-serif">
       {/* Top thin banner */}
-      <div className="bg-[#2A0845] text-[#c9a24b] py-1.5 text-xs text-center flex items-center justify-center gap-4 tracking-widest">
+      <div className="hidden md:flex bg-[#2A0845] text-[#c9a24b] py-1.5 text-xs text-center items-center justify-center gap-4 tracking-widest">
         <span>✧</span>
         <span className="hidden sm:inline">Timeless Traditions</span>
         <span className="hidden sm:inline">|</span>
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[#fcfbf9] text-[#2A0845] px-4 md:px-8 py-4 flex items-center justify-between relative">
+      <div className="bg-[#fcfbf9] text-[#2A0845] px-3 sm:px-4 md:px-8 py-3 md:py-4 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
         
         {/* Left: Logo and Text */}
         <div 
@@ -79,8 +79,8 @@ export const Header: React.FC<HeaderProps> = ({
             className="w-12 h-12 md:w-16 md:h-16 object-cover rounded-full shadow-sm" 
           />
           <div className="flex flex-col justify-center">
-            <span className="font-serif font-bold text-[1.3rem] md:text-2xl leading-none text-[#5C167D]">DEEPU'S COLLECTION</span>
-            <span className="font-sans font-bold text-[13px] md:text-base tracking-[0.1em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
+            <span className="font-serif font-bold text-xl md:text-2xl leading-none text-[#6D1B2F]">DEEPU'S COLLECTION</span>
+            <span className="font-sans font-bold text-[10px] sm:text-[11px] md:text-base tracking-[0.1em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
 
@@ -146,17 +146,17 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Right: Icons */}
-        <div className="flex items-center gap-3 shrink-0">
-          <button onClick={onOpenCart} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-[#5C167D] relative">
-            <ShoppingCart className="w-7 h-7" strokeWidth={2} />
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#6D1B2F]">
+            {isMobileMenuOpen ? <X className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} /> : <Menu className="w-7 h-7 sm:w-8 sm:h-8" strokeWidth={2.5} />}
+          </button>
+          <button onClick={onOpenCart} className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-[#6D1B2F] relative">
+            <ShoppingCart className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2.5} />
             {cartCount > 0 && (
-              <span className="absolute -top-0 -right-0 bg-[#c9a24b] text-[#2A0845] text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+              <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-sm">
                 {cartCount}
               </span>
             )}
-          </button>
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-[#5C167D]">
-            {isMobileMenuOpen ? <X className="w-8 h-8" strokeWidth={2.5} /> : <Menu className="w-8 h-8" strokeWidth={2.5} />}
           </button>
         </div>
 
