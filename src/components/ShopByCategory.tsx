@@ -6,12 +6,12 @@ interface ShopByCategoryProps {
 }
 
 export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory }) => {
-  const [activeCat, setActiveCat] = useState<string>('All');
+  const [activeCat, setActiveCat] = useState<string>('All Sarees');
 
-  // Prepend 'All' category if it doesn't exist, using a generic image
+  // Prepend 'All Sarees' category if it doesn't exist, using a generic image
   const displayCategories = [
-    { name: 'All', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', count: 'Explore' },
-    ...CATEGORIES.filter(c => c.name !== 'All')
+    { name: 'All Sarees', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', count: 'Explore' },
+    ...CATEGORIES.filter(c => c.name !== 'All Sarees' && c.name !== 'All')
   ];
 
   const handleCategoryClick = (name: string) => {
@@ -58,8 +58,8 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                   />
                 </div>
 
-                <div className={`mt-3 flex items-center justify-center transition-colors ${isActive ? 'text-[#8C1D35] border-b-2 border-[#8C1D35] pb-0.5' : 'text-[#3B1A4A]'}`}>
-                  <h3 className="font-sans font-bold text-[13px] md:text-[15px] tracking-wide">
+                <div className={`mt-3 flex items-center justify-center transition-colors ${isActive ? 'text-[#8C1D35] border-b-[2px] border-[#8C1D35] pb-0.5' : 'text-[#3B1A4A]'}`}>
+                  <h3 className="font-serif font-bold text-[14px] md:text-[16px] tracking-wide">
                     {cat.name}
                   </h3>
                   <span className="font-bold text-base leading-none ml-1">→</span>
