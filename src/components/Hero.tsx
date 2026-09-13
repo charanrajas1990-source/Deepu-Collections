@@ -35,14 +35,14 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
 
         {/* Bright HTML Overlay Button for Desktop (Covers baked-in text) */}
         <button 
-          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-lg rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
+          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-base md:text-lg rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
           style={{
-            left: '61.5%',
+            left: '67%',
             transform: 'translateX(-50%)',
-            top: '72%',
-            width: '26%',
-            height: '6%',
-            minHeight: '48px'
+            top: '71.5%',
+            width: '16%',
+            height: '5%',
+            minHeight: '44px'
           }}
         >
           Shop Now <ArrowRight className="w-5 h-5 ml-2" strokeWidth={2.5} />
