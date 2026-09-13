@@ -3,6 +3,10 @@ import { collection, onSnapshot, doc, setDoc, deleteDoc } from 'firebase/firesto
 import { db } from './lib/firebase';
 // import { INITIAL_PRODUCTS } from './data';
 import { Product, CartItem, Order } from './types';
+import { AnnouncementBar } from './components/AnnouncementBar';
+import { FounderSection } from './components/FounderSection';
+import { TestimonialSlider } from './components/TestimonialSlider';
+import { TrustBanner } from './components/TrustBanner';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ShopByCategory } from './components/ShopByCategory';
@@ -131,6 +135,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F7F2FA] flex flex-col font-sans text-[#2A0845]">
+      <AnnouncementBar />
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => {
@@ -176,6 +181,10 @@ export default function App() {
 
             <PromoBanner onShopWedding={() => handleSelectCategoryFromHome('Wedding Lehnga')} />
             
+            
+            <FounderSection />
+            <TestimonialSlider />
+            <TrustBanner />
             <HowToOrderDemo />
             <FaqDemo />
           </>
