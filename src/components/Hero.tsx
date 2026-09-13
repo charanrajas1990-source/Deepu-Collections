@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
   return (
-    <div className="w-full cursor-pointer overflow-hidden bg-[#2A0845] min-h-[50vh] border-b-[6px] border-[#5C167D]" onClick={onExplore}>
+    <div className="w-full cursor-pointer overflow-hidden bg-[#2A0845] min-h-[50vh] border-b-[4px] border-[#c9a24b]" onClick={onExplore}>
       <div className="w-full mt-0 md:mt-[-12.5%] relative mb-[-20%] md:mb-0">
         <picture className="block w-full">
           <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}mockup-desktop-final.jpg`} />
