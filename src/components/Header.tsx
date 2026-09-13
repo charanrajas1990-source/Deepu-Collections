@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-theme-cream text-theme-maroon px-3 sm:px-4 md:px-8 py-3 md:py-4 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
+      <div className="bg-theme-cream text-theme-maroon px-3 sm:px-4 md:px-8 py-3 md:py-2 flex items-center justify-between relative border-t-[3px] border-[#c9a24b] md:border-t-0 shadow-sm">
         
         {/* Left: Logo and Text */}
         <div 
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
           <img 
             src={`${import.meta.env.BASE_URL}deepu_logo.jpg`} 
             alt="Logo" 
-            className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 object-cover rounded-full shadow-sm" 
+            className="w-10 h-10 sm:w-12 sm:h-12 md:w-10 md:h-10 object-cover rounded-full shadow-sm" 
           />
           <div className="flex flex-col justify-center">
             <span 
