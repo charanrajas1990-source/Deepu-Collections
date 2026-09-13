@@ -29,7 +29,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
         {/* Header Section mimicking the reference image */}
         <div className="flex flex-row justify-between items-end mb-8 md:mb-12 border-b border-gray-200 pb-4">
           <div className="relative">
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#5C167D]">
+            <h2 className="font-serif text-xl md:text-3xl font-medium tracking-wide text-[#5C167D]">
               Explore Categories
             </h2>
             {/* Small yellow underline */}
@@ -58,7 +58,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
                   />
                 </div>
 
-                <h3 className={`font-serif font-bold text-sm md:text-base mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-[#2A0845] group-hover:text-[#c9a24b]'}`}>
+                <h3 className={`font-serif font-bold text-sm md:text-sm font-medium tracking-wide mt-4 transition-colors flex items-center gap-1 ${isActive ? 'text-[#5C167D]' : 'text-[#2A0845] group-hover:text-[#c9a24b]'}`}>
                   <span className={`${isActive ? 'border-b-2 border-[#c9a24b]' : ''}`}>{cat.name}</span>
                 </h3>
               </div>

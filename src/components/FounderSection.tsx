@@ -13,8 +13,8 @@ export const FounderSection: React.FC = () => {
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h3 className="font-serif text-3xl md:text-4xl font-bold text-[#5C167D] mb-2">Deepu</h3>
-            <span className="text-[#c9a24b] font-bold tracking-widest uppercase text-sm">Founder & Chief Designer</span>
+            <h3 className="font-serif text-2xl md:text-3xl font-medium tracking-wide text-[#5C167D] mb-2">Deepu</h3>
+            <span className="text-[#c9a24b] font-medium tracking-wide tracking-widest uppercase text-sm">Founder & Chief Designer</span>
             <div className="w-16 h-1 bg-[#c9a24b] my-6 mx-auto md:mx-0"></div>
             <p className="text-xl md:text-2xl font-serif text-[#2A0845] italic mb-6 leading-relaxed">
               "Every thread we weave carries a story of tradition, elegance, and the timeless beauty of Indian heritage. We don't just make sarees; we craft memories."

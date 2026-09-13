@@ -5,7 +5,7 @@ export const TestimonialSlider: React.FC = () => {
     <section className="py-16 md:py-24 bg-[#2A0845] text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#E6C195]">Customer Reviews</h2>
+          <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-wide text-[#E6C195]">Customer Reviews</h2>
           <p className="text-gray-300 mt-2 tracking-wider">Real feedback from our beautiful brides and customers</p>
           <div className="w-16 h-1 bg-[#c9a24b] mx-auto mt-4"></div>
         </div>

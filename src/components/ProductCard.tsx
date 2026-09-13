@@ -44,7 +44,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div className="p-3 sm:p-4 flex flex-col flex-grow bg-[#FAFAF9]">
-        <h3 className="font-serif font-bold text-[#6D1B2F] text-sm sm:text-base border-b border-[#6D1B2F]/20 pb-1 mb-2">
+        <h3 className="font-serif font-semibold text-[#6D1B2F] text-sm sm:text-base border-b border-[#6D1B2F]/20 pb-1 mb-2">
           {product.name}
         </h3>
         
@@ -69,7 +69,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         <div className="mt-auto">
-          <div className="font-bold text-[#6D1B2F] text-sm sm:text-base mb-3">
+          <div className="font-semibold text-[#6D1B2F] text-sm sm:text-base mb-3">
             Price: ₹{product.price.toLocaleString('en-IN')}
           </div>
           
@@ -78,7 +78,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onAddToCart(product, e);
             }}
-            className="w-full py-2.5 sm:py-3 bg-[#c9a24b] text-[#2A0845] text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-[#b89139] transition-colors rounded-lg shadow-sm hover:shadow flex justify-center items-center gap-2"
+            className="w-full py-2.5 sm:py-3 bg-[#c9a24b] text-[#2A0845] text-xs sm:text-sm font-semibold tracking-widest uppercase hover:bg-[#b89139] transition-colors rounded-lg shadow-sm hover:shadow flex justify-center items-center gap-2"
           >
             <ShoppingBag className="w-4 h-4" /> ADD TO CART
           </button>
