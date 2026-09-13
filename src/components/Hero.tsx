@@ -33,19 +33,32 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           Shop Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5" strokeWidth={2.5} />
         </button>
 
-        {/* Bright HTML Overlay Button for Desktop (Covers baked-in text) */}
-        <button 
-          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-base md:text-lg rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
+        {/* Camouflage Patch to erase the baked-in Desktop button */}
+        <div 
+          className="hidden md:block absolute bg-[#280e28] z-[5]"
           style={{
-            left: '66%',
+            left: '67%',
             transform: 'translateX(-50%)',
-            top: '70.2%',
-            width: '18%',
+            top: '70.5%',
+            width: '15.5%',
             height: '6%',
-            minHeight: '44px'
+            filter: 'blur(2px)' // Slight blur to blend with the JPG artifacts
+          }}
+        />
+
+        {/* New Smaller HTML Overlay Button for Desktop */}
+        <button 
+          className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-base rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
+          style={{
+            left: '67%',
+            transform: 'translateX(-50%)',
+            top: '70.8%',
+            width: '12%',
+            height: '4.5%',
+            minHeight: '38px'
           }}
         >
-          Shop Now <ArrowRight className="w-5 h-5 ml-2" strokeWidth={2.5} />
+          Shop Now <ArrowRight className="w-4 h-4 ml-1.5" strokeWidth={2.5} />
         </button>
       </div>
     </div>
