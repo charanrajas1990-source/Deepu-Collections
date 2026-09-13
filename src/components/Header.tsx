@@ -80,11 +80,11 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <div className="flex flex-col justify-center">
             <span 
-              className="font-serif font-black text-[1.1rem] sm:text-xl md:text-2xl leading-none tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#D4AF37] via-[#B98734] to-[#6F5442]"
+              className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl md:text-2xl leading-none tracking-wider sm:tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#D4AF37] via-[#B98734] to-[#6F5442]"
             >
               DEEPU'S COLLECTION
             </span>
-            <span className="font-sans font-bold text-[9px] sm:text-[10px] md:text-base tracking-[0.2em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
+            <span className="font-sans font-bold text-[8px] min-[375px]:text-[9px] sm:text-[10px] md:text-base tracking-[0.15em] sm:tracking-[0.2em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
 
