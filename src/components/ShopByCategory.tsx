@@ -23,7 +23,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
   };
 
   return (
-    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 pt-3 pb-2 md:pt-4 md:pb-2 px-4 md:px-12 lg:px-24 bg-theme-cream">
+    <section id="categories-section" className="scroll-mt-24 md:scroll-mt-32 pt-3 pb-2 md:pt-4 md:pb-2 px-6 sm:px-8 md:px-12 lg:px-24 bg-theme-cream">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section mimicking the reference image */}
