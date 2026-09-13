@@ -20,7 +20,8 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
         
         {/* Simple Shop Now Button for Mobile */}
         <button 
-          className="md:hidden absolute bottom-[22%] left-1/2 -translate-x-1/2 bg-[#eab308] text-theme-maroon font-bold text-sm sm:text-base px-8 py-3 rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
+          className="md:hidden absolute bottom-[22%] left-0 right-0 mx-auto w-max bg-[#eab308] text-theme-maroon font-bold text-sm sm:text-base px-8 py-3 rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
+          style={{ WebkitFontSmoothing: 'antialiased' }}
         >
           Shop Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5" strokeWidth={2.5} />
         </button>
@@ -43,7 +44,8 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
           className="hidden md:flex absolute bg-[#eab308] text-theme-maroon font-bold text-base rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
           style={{
             left: '67%',
-            transform: 'translateX(-50%)',
+            transform: 'translateX(-50%) translateZ(0)',
+            WebkitFontSmoothing: 'antialiased',
             top: '70.8%',
             width: '12%',
             height: '4.5%',
