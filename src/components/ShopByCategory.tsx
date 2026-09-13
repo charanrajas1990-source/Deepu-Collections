@@ -29,7 +29,7 @@ export const ShopByCategory: React.FC<ShopByCategoryProps> = ({ onSelectCategory
         {/* Header Section mimicking the reference image */}
         <div className="flex flex-row justify-between items-end mb-5 md:mb-12 border-b border-gray-200 pb-4">
           <div className="relative">
-            <h2 className="font-serif text-xl md:text-3xl font-bold tracking-wide text-[\#5C167D]">
+            <h2 className="font-serif text-2xl md:text-4xl font-bold tracking-wide text-[#3B1A4A]">
               Explore Categories
             </h2>
             {/* Small yellow underline */}
