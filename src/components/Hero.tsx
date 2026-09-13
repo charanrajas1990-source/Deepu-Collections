@@ -37,11 +37,11 @@ export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
         <button 
           className="hidden md:flex absolute bg-[#eab308] text-[#2A0845] font-bold text-base md:text-lg rounded-xl shadow-xl hover:bg-[#ca8a04] transition-all z-10 items-center justify-center border-2 border-[#fef08a]"
           style={{
-            left: '67%',
+            left: '66%',
             transform: 'translateX(-50%)',
-            top: '71.5%',
-            width: '16%',
-            height: '5%',
+            top: '70.2%',
+            width: '18%',
+            height: '6%',
             minHeight: '44px'
           }}
         >
