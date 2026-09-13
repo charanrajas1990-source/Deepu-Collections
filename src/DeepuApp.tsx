@@ -135,7 +135,7 @@ export default function App() {
   const wishlistProducts = products.filter((p) => wishlistIds.includes(p.id));
 
   return (
-    <div className="min-h-screen bg-theme-cream flex flex-col font-sans text-theme-maroon max-w-[1600px] mx-auto border-x-4 border-theme-lining shadow-2xl overflow-hidden">
+    <div className="min-h-screen bg-theme-cream flex flex-col font-sans text-theme-maroon">
       <AnnouncementBar />
       <Header
         activeTab={activeTab}
