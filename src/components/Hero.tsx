@@ -8,27 +8,19 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onExplore }) => {
   return (
     <div className="w-full cursor-pointer overflow-hidden bg-[#2A0845] min-h-[50vh] border-b-[6px] border-[#5C167D]" onClick={onExplore}>
-      <div className="w-full mt-[-27%] md:mt-[-12.5%] relative">
+      <div className="w-full mt-0 md:mt-[-12.5%] relative">
         <picture className="block w-full">
           <source media="(min-width: 768px)" srcSet={`${import.meta.env.BASE_URL}mockup-desktop-final.jpg`} />
           <img
-            src={`${import.meta.env.BASE_URL}mockup-mobile-final.jpg`}
+            src={`${import.meta.env.BASE_URL}3_womens.webp`}
             alt="Deepu's Collection Home"
-            className="w-full h-auto object-cover object-top"
+            className="w-full h-auto object-cover object-center"
           />
         </picture>
         
-        {/* Bright HTML Overlay Button for Mobile (Covers baked-in text) */}
+        {/* Simple Shop Now Button for Mobile */}
         <button 
-          className="md:hidden absolute bg-[#eab308] text-theme-maroon font-bold text-sm sm:text-base rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
-          style={{
-            left: '50%',
-            transform: 'translateX(-50%)',
-            top: '90.2%',
-            width: '56%',
-            height: '5.5%',
-            minHeight: '40px'
-          }}
+          className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#eab308] text-theme-maroon font-bold text-sm sm:text-base px-8 py-3 rounded-lg shadow-xl hover:bg-[#ca8a04] transition-all z-10 flex items-center justify-center border-2 border-[#fef08a]"
         >
           Shop Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-1.5" strokeWidth={2.5} />
         </button>
