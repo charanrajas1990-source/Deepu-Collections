@@ -81,7 +81,6 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex flex-col justify-center">
             <span 
               className="font-serif font-extrabold text-[1.1rem] sm:text-xl md:text-2xl leading-none tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-[#FFF2CD] via-[#C9A24B] to-[#593C22]"
-              style={{ filter: 'drop-shadow(0px 2px 1px rgba(0,0,0,0.5)) drop-shadow(0px 1px 0px rgba(255,255,255,0.2))' }}
             >
               DEEPU'S COLLECTION
             </span>
