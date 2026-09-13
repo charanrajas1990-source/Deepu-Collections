@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               DEEPU'S COLLECTION
             </span>
-            <span className="font-sans font-semibold text-[8px] min-[375px]:text-[9px] sm:text-[10px] md:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
+            <span className="font-sans font-bold text-[10px] sm:text-xs md:text-sm tracking-[0.1em] sm:tracking-[0.15em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
           </div>
         </div>
 
