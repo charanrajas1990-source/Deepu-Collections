@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex items-center justify-start gap-2.5 cursor-pointer shrink-0 lg:ml-12 xl:ml-32"
         >
           <img 
-            src={`${import.meta.env.BASE_URL}deepu_logo.jpg`} 
+            src={`${import.meta.env.BASE_URL}deepu_logo.PNG`} 
             alt="Logo" 
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-10 md:h-10 object-cover rounded-full shadow-sm" 
           />
