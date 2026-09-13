@@ -179,8 +179,6 @@ export default function App() {
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
             />
-
-            <PromoBanner onShopWedding={() => handleSelectCategoryFromHome('Wedding Lehnga')} />
             
             
             <FounderSection />
