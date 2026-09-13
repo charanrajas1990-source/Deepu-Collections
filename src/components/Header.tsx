@@ -175,11 +175,20 @@ export const Header: React.FC<HeaderProps> = ({
               
               {/* Drawer Header */}
               <div className="bg-[#FCF6E8] px-4 py-4 flex items-center justify-between border-b border-[#E5D9C5] shrink-0">
-                <div className="flex items-center gap-3">
-                  <img src={`${import.meta.env.BASE_URL}deepu_logo.PNG`} alt="Logo" className="w-12 h-12 object-contain" />
-                  <div className="flex flex-col mt-1">
-                    <span className="font-serif font-black text-lg leading-none tracking-wide text-[#8C1D35]">Deepu's</span>
-                    <span className="font-sans font-bold text-[10px] tracking-[0.08em] text-[#c9a24b] uppercase mt-1">COLLECTION</span>
+                <div className="flex items-center justify-start gap-2.5">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}deepu_logo.PNG`} 
+                    alt="Logo" 
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full shadow-sm" 
+                  />
+                  <div className="flex flex-col justify-center">
+                    <span 
+                      className="font-serif font-black text-[0.85rem] min-[375px]:text-[0.95rem] sm:text-xl leading-none tracking-wider uppercase text-[#4A2A04] drop-shadow-sm"
+                      style={{ WebkitTextStroke: '0.5px #4A2A04' }}
+                    >
+                      DEEPU'S COLLECTION
+                    </span>
+                    <span className="font-sans font-bold text-[10px] sm:text-xs tracking-[0.1em] sm:tracking-[0.15em] text-[#c9a24b] uppercase mt-1">WITH ELEGANCE</span>
                   </div>
                 </div>
                 <button onClick={() => setIsMobileMenuOpen(false)} className="p-1.5 text-[#3B1A4A] hover:bg-black/5 rounded-full transition-colors">
