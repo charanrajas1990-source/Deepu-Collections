@@ -219,7 +219,11 @@ export default function App() {
         clearCart={() => setCartItems([])}
         onShopNow={() => {
           setIsCartOpen(false);
-          setActiveTab('shop');
+          setShopCategoryFilter('All Sarees');
+          setActiveTab('home');
+          setTimeout(() => {
+            document.getElementById('categories-section')?.scrollIntoView({ behavior: 'smooth' });
+          }, 150);
         }}
       />
 
