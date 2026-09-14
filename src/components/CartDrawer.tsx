@@ -324,9 +324,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               </div>
 
               <button
-                onClick={() => { if (cartItems.length > 0) setIsCheckoutModalOpen(true); }}
-                disabled={cartItems.length === 0}
-                className={`w-full font-bold py-3.5 px-6 rounded-xl transition-all flex items-center justify-center text-[15px] ${cartItems.length > 0 ? 'bg-[#8C1D35] text-white hover:bg-[#6b1427] shadow-md' : 'bg-[#8C1D35] text-white opacity-95 cursor-not-allowed'}`}
+                onClick={() => { 
+                  if (cartItems.length > 0) {
+                    setIsCheckoutModalOpen(true); 
+                  } else {
+                    alert('Your cart is empty!');
+                  }
+                }}
+                className={`w-full font-bold py-3.5 px-6 rounded-xl transition-all flex items-center justify-center text-[15px] bg-[#8C1D35] text-white ${cartItems.length > 0 ? 'hover:bg-[#6b1427] shadow-md' : 'opacity-95'}`}
               >
                 Proceed to Checkout
               </button>
