@@ -145,7 +145,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 className={`flex-1 py-3.5 px-6 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all ${
                   addedAnimation
                     ? 'bg-emerald-600 text-white'
-                    : 'bg-[#5C167D] hover:bg-[#4A1066] text-white'
+                    : 'bg-[#2A0845] hover:bg-[#1a052b] text-white'
                 }`}
               >
                 {addedAnimation ? (
