@@ -42,11 +42,11 @@ export const ShopView: React.FC<ShopViewProps> = ({
       
       {/* Simple Header indicating current filter */}
       <div className="mb-8 flex justify-between items-end pb-2">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#8C1D35] relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-[50px] md:after:w-[65px] after:bg-[#c9a24b] inline-block">
+        <h2 className="font-serif text-3xl md:text-[40px] leading-tight font-bold text-[#6D1B2F] relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[4px] after:w-[60px] md:after:w-[80px] after:bg-[#D4AF37] inline-block">
           {selectedCategory === 'All' ? 'All Sarees' : `${selectedCategory} Collection`}
         </h2>
-        <span className="text-[#c9a24b] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1">
-          {filtered.length} Items
+        <span className="text-[#D4AF37] text-xs md:text-sm font-bold tracking-[0.15em] uppercase mb-2">
+          Fresh Collections Ready
         </span>
       </div>
 
