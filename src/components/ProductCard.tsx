@@ -54,19 +54,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </p>
         )}
 
-        {/* Sizes row (mock layout from screenshot) */}
-        {product.sizes && product.sizes.length > 0 && (
-          <div className="flex gap-2 mb-3">
-            {product.sizes.slice(0, 2).map((size, idx) => (
-              <span 
-                key={idx} 
-                className={`text-[10px] sm:text-xs font-medium px-2 py-1 rounded border ${idx === 0 ? 'border-[#6D1B2F] bg-[#6D1B2F]/5 text-[#6D1B2F]' : 'border-gray-200 text-gray-500'}`}
-              >
-                {size.length > 12 ? size.substring(0,10)+'...' : size}
-              </span>
-            ))}
-          </div>
-        )}
+
 
         <div className="mt-auto">
           <div className="font-semibold text-[#6D1B2F] text-sm sm:text-base mb-3">
