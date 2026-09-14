@@ -115,34 +115,55 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         </div>
 
         {orderCompleted ? (
-          <div className="p-8 flex flex-col items-center justify-center text-center flex-grow">
-            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mb-4 animate-bounce">
-              <CheckCircle2 className="w-10 h-10" />
+          <div className="p-6 flex flex-col flex-grow overflow-y-auto bg-white">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="font-serif text-xl font-bold text-[#8C1D35]">Delivery & Payment Details</h3>
+              <button
+                onClick={onClose}
+                className="text-gray-500 hover:bg-gray-100 p-1.5 rounded-full transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-theme-maroon mb-2">Order Successful!</h3>
-            <p className="text-gray-600 text-sm mb-6">
-              Your order ID is <strong className="text-[#5C167D]">{orderCompleted.id}</strong>. We are redirecting you to WhatsApp to confirm your order and receive payment details!
-            </p>
 
-            <a
-              href={getWhatsAppLink(orderCompleted)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 mb-4"
-            >
-              💬 Track Order via WhatsApp
-            </a>
+            <div className="flex flex-col items-center text-center">
+              <div className="text-6xl mb-4">🎉</div>
+              <h3 className="font-serif text-2xl font-bold text-[#0b8d7c] mb-3">Order Placed Successfully!</h3>
+              <p className="text-gray-700 text-sm mb-6 px-2">
+                Your order ID is <strong className="text-[#8C1D35]">{orderCompleted.id}</strong>. We are redirecting you to WhatsApp to confirm your order and receive payment details.
+              </p>
 
-            <button
-              onClick={() => {
-                setOrderCompleted(null);
-                setIsCheckoutModalOpen(false);
-                onClose();
-              }}
-              className="text-[#5C167D] font-semibold text-sm hover:underline"
-            >
-              ← Continue Shopping
-            </button>
+              <div className="w-full bg-[#FCF6E8] rounded-xl p-5 text-left mb-6">
+                <h4 className="font-bold text-[#8C1D35] mb-3 text-sm">Order Details</h4>
+                <div className="space-y-2 text-sm text-gray-800">
+                  <p><span className="font-bold">Name:</span> {orderCompleted.customerName}</p>
+                  <p><span className="font-bold">Phone:</span> {orderCompleted.customerPhone}</p>
+                  <p><span className="font-bold">Amount Payable:</span> ₹{orderCompleted.totalAmount.toLocaleString('en-IN')}</p>
+                  <p><span className="font-bold">Payment Method:</span> WhatsApp (Offline)</p>
+                  <p className="line-clamp-2"><span className="font-bold">Address:</span> {customerAddress}, {customerState} - {customerPincode}</p>
+                </div>
+              </div>
+
+              <a
+                href={getWhatsAppLink(orderCompleted)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#00E676] hover:bg-[#00c968] text-white font-bold py-3.5 px-6 rounded-lg shadow-sm transition-all flex items-center justify-center gap-2 mb-3"
+              >
+                <MessageCircle className="w-5 h-5" /> Send WhatsApp Message
+              </a>
+
+              <button
+                onClick={() => {
+                  setOrderCompleted(null);
+                  setIsCheckoutModalOpen(false);
+                  onClose();
+                }}
+                className="w-full border-2 border-[#8C1D35] text-[#8C1D35] font-bold py-3 px-6 rounded-lg hover:bg-red-50 transition-colors"
+              >
+                Back to Shop
+              </button>
+            </div>
           </div>
         ) : isCheckoutModalOpen ? (
           <div className="p-6 flex-grow overflow-y-auto bg-white">
