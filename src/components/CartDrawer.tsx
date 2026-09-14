@@ -50,16 +50,18 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   const getWhatsAppLink = (order: Order) => {
-    let productsText = order.items.map(item => `* ${item.product.name} x ${item.quantity}`).join('\\n');
-    let waMsg = `Hello Deepu's Collection!\\n\\n` +
+    const totalItems = order.items.reduce((acc, item) => acc + item.quantity, 0);
+    let productsText = order.items.map(item => ` • ${item.product.name} (Size: ${item.selectedSize}) x ${item.quantity}`).join('\\n');
+    let waMsg = `Hello Deepu's Collection,\\n\\n` +
                 `I would like to place an order.\\n\\n` +
-                `*Order ID:* ${order.id}\\n\\n` +
-                `*Customer Details:*\\n` +
-                `Name: ${order.customerName}\\n` +
+                `Order ID: ${order.id}\\n\\n` +
+                `Customer Name: ${order.customerName}\\n` +
                 `Phone: ${order.customerPhone}\\n` +
-                `Delivery Address: ${customerAddress}, ${customerState}, ${customerPincode}\\n\\n` +
-                `*Products:*\\n${productsText}\\n\\n` +
-                `*Total Amount:* ₹${order.totalAmount}\\n\\n` +
+                `Delivery Address: ${customerAddress}, ${customerState} - ${customerPincode}\\n\\n` +
+                `Products:\\n${productsText}\\n\\n` +
+                `Total Sarees: ${totalItems}\\n` +
+                `Shipping: ₹0\\n` +
+                `Total Amount: ₹${order.totalAmount.toLocaleString('en-IN')}\\n\\n` +
                 `Please confirm my order.\\n\\n` +
                 `Thank you.`;
 
