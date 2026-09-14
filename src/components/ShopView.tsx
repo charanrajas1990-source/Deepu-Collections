@@ -41,11 +41,11 @@ export const ShopView: React.FC<ShopViewProps> = ({
     <div id="shop-products-grid" className="pt-2 pb-6 md:pt-4 md:pb-8 px-4 md:px-8 max-w-7xl mx-auto">
       
       {/* Simple Header indicating current filter */}
-      <div className="mb-8 flex justify-between items-end border-b border-gray-200 pb-2">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#5C167D]">
+      <div className="mb-8 flex justify-between items-end pb-2">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#8C1D35] border-b-[3px] border-[#c9a24b] pb-1 inline-block">
           {selectedCategory === 'All' ? 'All Sarees' : `${selectedCategory} Collection`}
         </h2>
-        <span className="text-[#c9a24b] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        <span className="text-[#c9a24b] text-[10px] md:text-xs font-bold tracking-widest uppercase mb-1">
           {filtered.length} Items
         </span>
       </div>
