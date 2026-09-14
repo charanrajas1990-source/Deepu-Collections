@@ -47,6 +47,23 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     }
   };
 
+  const getWhatsAppLink = (order: Order) => {
+    let productsText = order.items.map(item => `* ${item.product.name} x ${item.quantity}`).join('\\n');
+    let waMsg = `Hello Deepu's Collection!\\n\\n` +
+                `I would like to place an order.\\n\\n` +
+                `*Order ID:* ${order.id}\\n\\n` +
+                `*Customer Details:*\\n` +
+                `Name: ${order.customerName}\\n` +
+                `Phone: ${order.customerPhone}\\n` +
+                `Delivery Address: ${customerAddress}\\n\\n` +
+                `*Products:*\\n${productsText}\\n\\n` +
+                `*Total Amount:* ₹${order.totalAmount}\\n\\n` +
+                `Please confirm my order.\\n\\n` +
+                `Thank you.`;
+
+    return `https://wa.me/919876543210?text=${encodeURIComponent(waMsg)}`;
+  };
+
   const handleRazorpayCheckout = (e: React.FormEvent) => {
     e.preventDefault();
     if (!customerName || !customerPhone || !customerAddress) {
@@ -56,7 +73,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
     setIsProcessing(true);
 
-    // Simulate Razorpay payment gateway popup
+    // Process the order and redirect to WhatsApp
     setTimeout(() => {
       setIsProcessing(false);
       const newOrder: Order = {
@@ -69,14 +86,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         status: 'Pending',
       };
       setOrderCompleted(newOrder);
+      
+      // Auto redirect to WhatsApp after showing success screen
+      setTimeout(() => {
+        window.open(getWhatsAppLink(newOrder), '_blank');
+      }, 1200);
+
       onOrderSuccess(newOrder);
       clearCart();
-    }, 2000);
-  };
-
-  const getWhatsAppLink = (order: Order) => {
-    const text = `Hello Deepu's Collection! I have successfully placed order *${order.id}* for ₹${order.totalAmount}. My name is ${order.customerName}. Please confirm shipment!`;
-    return `https://wa.me/919876543210?text=${encodeURIComponent(text)}`;
+    }, 1500);
   };
 
   return (
@@ -101,16 +119,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
             <h3 className="font-serif text-2xl font-bold text-theme-maroon mb-2">Order Successful!</h3>
             <p className="text-gray-600 text-sm mb-6">
-              Thank you for shopping with Deepu's Collection. Order ID: <strong className="text-[#5C167D]">{orderCompleted.id}</strong>
+              Your order ID is <strong className="text-[#5C167D]">{orderCompleted.id}</strong>. We are redirecting you to WhatsApp to confirm your order and receive payment details!
             </p>
 
             <a
               href={getWhatsAppLink(orderCompleted)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 mb-4"
+              className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 mb-4"
             >
-              <MessageCircle className="w-5 h-5" /> Send Order via WhatsApp
+              💬 Track Order via WhatsApp
             </a>
 
             <button
