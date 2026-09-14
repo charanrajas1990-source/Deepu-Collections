@@ -29,6 +29,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
   const [customerAddress, setCustomerAddress] = useState('');
+  const [customerState, setCustomerState] = useState('');
+  const [customerPincode, setCustomerPincode] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [orderCompleted, setOrderCompleted] = useState<Order | null>(null);
 
@@ -55,7 +57,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 `*Customer Details:*\\n` +
                 `Name: ${order.customerName}\\n` +
                 `Phone: ${order.customerPhone}\\n` +
-                `Delivery Address: ${customerAddress}\\n\\n` +
+                `Delivery Address: ${customerAddress}, ${customerState}, ${customerPincode}\\n\\n` +
                 `*Products:*\\n${productsText}\\n\\n` +
                 `*Total Amount:* ₹${order.totalAmount}\\n\\n` +
                 `Please confirm my order.\\n\\n` +
@@ -143,68 +145,110 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </button>
           </div>
         ) : isCheckoutModalOpen ? (
-          <div className="p-6 flex-grow overflow-y-auto">
+          <div className="p-6 flex-grow overflow-y-auto bg-white">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="font-serif text-xl font-bold text-theme-maroon">Checkout Details</h3>
+              <h3 className="font-serif text-xl font-bold text-[#8C1D35]">Delivery & Payment Details</h3>
               <button
                 onClick={() => setIsCheckoutModalOpen(false)}
-                className="text-xs text-purple-700 hover:underline"
+                className="text-gray-500 hover:bg-gray-100 p-1.5 rounded-full transition-colors"
               >
-                ← Back to Cart
+                <X className="w-5 h-5" />
               </button>
             </div>
 
             <form onSubmit={handleRazorpayCheckout} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Full Name</label>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">Full Name *</label>
                 <input
                   type="text"
                   required
-                  placeholder="Deepu Sharma"
+                  placeholder="Enter your full name"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-[#5C167D]"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#8C1D35]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">WhatsApp Phone Number</label>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">Mobile Number (WhatsApp) *</label>
                 <input
                   type="tel"
                   required
-                  placeholder="+91 98765 43210"
+                  placeholder="10-digit mobile number"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-[#5C167D]"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#8C1D35]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Delivery Address</label>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">Delivery Address *</label>
                 <textarea
                   required
                   rows={3}
-                  placeholder="House no, Street, City, Pincode"
+                  placeholder="House/Flat No., Street, Landmark"
                   value={customerAddress}
                   onChange={(e) => setCustomerAddress(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-[#5C167D]"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#8C1D35]"
                 />
               </div>
 
-              <div className="bg-theme-cream p-4 rounded-xl border border-purple-100 my-4">
-                <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>Total Amount Payable:</span>
-                  <span className="font-bold text-[#5C167D] text-base">₹{finalTotal.toLocaleString('en-IN')}</span>
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">State (For Shipping Calculation) *</label>
+                <select
+                  required
+                  value={customerState}
+                  onChange={(e) => setCustomerState(e.target.value)}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#8C1D35] appearance-none bg-white"
+                >
+                  <option value="" disabled>Select your delivery State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-900 mb-1.5">Pincode *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="6-digit pincode"
+                  value={customerPincode}
+                  onChange={(e) => setCustomerPincode(e.target.value)}
+                  className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-[#8C1D35]"
+                />
+              </div>
+
+              <div className="p-4 rounded-xl border border-gray-200 my-6 bg-white space-y-3">
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>Total Sarees:</span>
+                  <span>{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
                 </div>
-                <p className="text-[11px] text-emerald-600 font-medium">✓ Razorpay 256-bit SSL Secure Payment Gateway Placeholder</p>
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>Subtotal:</span>
+                  <span>₹{subtotal.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between text-sm text-gray-600 pb-3 border-b border-dashed border-gray-300">
+                  <span>Shipping Charges:</span>
+                  <span>{customerState ? '₹0' : 'Select State'}</span>
+                </div>
+                
+                <div className="flex justify-between items-center pt-1">
+                  <span className="font-bold text-[#8C1D35] text-lg">Total Payable:</span>
+                  <span className="font-bold text-[#8C1D35] text-lg">₹{finalTotal.toLocaleString('en-IN')}</span>
+                </div>
               </div>
 
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="w-full bg-[#5C167D] hover:bg-[#4A1066] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                className="w-full bg-[#8C1D35] hover:bg-[#6b1427] text-white font-bold py-3.5 px-6 rounded-lg shadow-sm transition-all flex items-center justify-center text-[15px]"
               >
-                {isProcessing ? 'Processing Payment...' : `Pay ₹{finalTotal.toLocaleString('en-IN')} via Razorpay`}
+                {isProcessing ? 'Processing...' : 'Proceed to Order'}
               </button>
             </form>
           </div>
