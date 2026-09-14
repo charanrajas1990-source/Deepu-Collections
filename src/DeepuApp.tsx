@@ -281,7 +281,7 @@ export default function App() {
       {/* Floating Cart Button */}
       <button 
         onClick={() => setIsCartOpen(true)}
-        className="fixed bottom-6 right-6 w-[64px] h-[64px] bg-[#8C1D35] border-[3px] border-[#c9a24b] text-white rounded-full shadow-[0_0_15px_rgba(140,29,53,0.5)] hover:bg-[#721528] transition-all hover:scale-110 z-40 flex items-center justify-center"
+        className="fixed bottom-6 right-6 w-[64px] h-[64px] bg-[#3B1A4A] border-[3px] border-[#c9a24b] text-white rounded-full shadow-[0_0_15px_rgba(59,26,74,0.5)] hover:bg-[#2A1235] transition-all hover:scale-110 z-40 flex items-center justify-center"
         aria-label="View Cart"
       >
         <ShoppingCart className="w-8 h-8" strokeWidth={2.5} />
