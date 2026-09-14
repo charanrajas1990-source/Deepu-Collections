@@ -63,7 +63,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 `Please confirm my order.\\n\\n` +
                 `Thank you.`;
 
-    return `https://wa.me/917032022203?text=${encodeURIComponent(waMsg)}`;
+    return `https://wa.me/919182319328?text=${encodeURIComponent(waMsg)}`;
   };
 
   const handleRazorpayCheckout = (e: React.FormEvent) => {

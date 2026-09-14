@@ -269,7 +269,7 @@ export default function App() {
 
       {/* Floating WhatsApp Widget */}
       <a 
-        href="https://wa.me/917032022203?text=Hello%20Deepu's%20Collection!%20I%20visited%20your%20website%20and%20would%20love%20to%20order%20some%20traditional%20sarees.%20Could%20you%20please%20help%20me%20with%20my%20order%3F" 
+        href="https://wa.me/919182319328?text=Hello%20Deepu's%20Collection!%20I%20visited%20your%20website%20and%20would%20love%20to%20order%20some%20traditional%20sarees.%20Could%20you%20please%20help%20me%20with%20my%20order%3F" 
         className="fixed bottom-[102px] right-6 w-[64px] h-[64px] bg-[#00E676] text-white rounded-full shadow-[0_4px_15px_rgba(0,230,118,0.4)] hover:bg-[#00c968] transition-all hover:scale-110 z-40 flex items-center justify-center"
         target="_blank" 
         rel="noopener noreferrer" 
