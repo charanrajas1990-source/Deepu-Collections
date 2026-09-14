@@ -270,23 +270,23 @@ export default function App() {
       {/* Floating WhatsApp Widget */}
       <a 
         href="https://wa.me/919876543210?text=Hello%20Deepu's%20Collection!%20I%20visited%20your%20website%20and%20would%20love%20to%20order%20some%20traditional%20sarees.%20Could%20you%20please%20help%20me%20with%20my%20order%3F" 
-        className="fixed bottom-[104px] right-6 bg-[#00E676] text-white p-3.5 rounded-full shadow-[0_4px_15px_rgba(0,230,118,0.4)] hover:bg-[#00c968] transition-all hover:scale-110 z-40 flex items-center justify-center"
+        className="fixed bottom-[102px] right-6 w-[64px] h-[64px] bg-[#00E676] text-white rounded-full shadow-[0_4px_15px_rgba(0,230,118,0.4)] hover:bg-[#00c968] transition-all hover:scale-110 z-40 flex items-center justify-center"
         target="_blank" 
         rel="noopener noreferrer" 
         aria-label="Chat on WhatsApp"
       >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.714-1.464L0 24zm6.273-3.832c1.616.96 3.197 1.48 4.887 1.481 5.485 0 9.948-4.467 9.951-9.957.002-2.66-1.033-5.161-2.915-7.045C16.37 2.76 13.868 1.72 11.2 1.72c-5.49 0-9.956 4.467-9.959 9.96-.001 1.79.475 3.535 1.38 5.093l-.998 3.64 3.731-.977zm12.355-7.37c-.305-.152-1.805-.892-2.084-.993-.28-.101-.484-.152-.687.152-.203.305-.788 1.002-.966 1.206-.178.203-.356.228-.661.076-.305-.152-1.288-.475-2.454-1.517-.908-.81-1.52-1.812-1.698-2.117-.178-.305-.019-.47.133-.621.137-.136.305-.356.457-.533.152-.178.203-.305.305-.508.102-.203.051-.381-.025-.533-.076-.152-.687-1.657-.941-2.27-.248-.599-.5-.517-.688-.527l-.587-.01c-.203 0-.533.076-.813.381-.28.305-1.067 1.042-1.067 2.542 0 1.5 1.092 2.946 1.244 3.15.152.203 2.15 3.284 5.207 4.602.727.314 1.295.5 1.737.64.73.232 1.393.198 1.918.12.585-.087 1.805-.737 2.06-1.45.253-.712.253-1.322.178-1.45-.076-.127-.28-.203-.585-.355z"/></svg>
+        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.504-5.714-1.464L0 24zm6.273-3.832c1.616.96 3.197 1.48 4.887 1.481 5.485 0 9.948-4.467 9.951-9.957.002-2.66-1.033-5.161-2.915-7.045C16.37 2.76 13.868 1.72 11.2 1.72c-5.49 0-9.956 4.467-9.959 9.96-.001 1.79.475 3.535 1.38 5.093l-.998 3.64 3.731-.977zm12.355-7.37c-.305-.152-1.805-.892-2.084-.993-.28-.101-.484-.152-.687.152-.203.305-.788 1.002-.966 1.206-.178.203-.356.228-.661.076-.305-.152-1.288-.475-2.454-1.517-.908-.81-1.52-1.812-1.698-2.117-.178-.305-.019-.47.133-.621.137-.136.305-.356.457-.533.152-.178.203-.305.305-.508.102-.203.051-.381-.025-.533-.076-.152-.687-1.657-.941-2.27-.248-.599-.5-.517-.688-.527l-.587-.01c-.203 0-.533.076-.813.381-.28.305-1.067 1.042-1.067 2.542 0 1.5 1.092 2.946 1.244 3.15.152.203 2.15 3.284 5.207 4.602.727.314 1.295.5 1.737.64.73.232 1.393.198 1.918.12.585-.087 1.805-.737 2.06-1.45.253-.712.253-1.322.178-1.45-.076-.127-.28-.203-.585-.355z"/></svg>
       </a>
 
       {/* Floating Cart Button */}
       <button 
         onClick={() => setIsCartOpen(true)}
-        className="fixed bottom-6 right-6 bg-[#8C1D35] border-[3px] border-[#c9a24b] text-white p-3.5 rounded-full shadow-[0_0_15px_rgba(140,29,53,0.5)] hover:bg-[#721528] transition-all hover:scale-110 z-40 flex items-center justify-center"
+        className="fixed bottom-6 right-6 w-[64px] h-[64px] bg-[#8C1D35] border-[3px] border-[#c9a24b] text-white rounded-full shadow-[0_0_15px_rgba(140,29,53,0.5)] hover:bg-[#721528] transition-all hover:scale-110 z-40 flex items-center justify-center"
         aria-label="View Cart"
       >
-        <ShoppingCart className="w-8 h-8 relative right-0.5" strokeWidth={2.5} />
+        <ShoppingCart className="w-8 h-8" strokeWidth={2.5} />
         {cartItems.reduce((acc, item) => acc + item.quantity, 0) > 0 && (
-          <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-white text-[11px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-sm">
+          <span className="absolute -top-1 -right-1 bg-[#c9a24b] text-white text-[12px] w-6 h-6 rounded-full flex items-center justify-center font-bold shadow-sm">
             {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
           </span>
         )}
