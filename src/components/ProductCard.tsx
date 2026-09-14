@@ -45,7 +45,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
       <div className="p-3 sm:p-4 flex flex-col flex-grow bg-[#FAFAF9]">
         <h3 className="font-serif font-semibold text-[#6D1B2F] text-sm sm:text-base mb-2">
-          <span className="underline decoration-[#8C1D35] decoration-2 underline-offset-[5px]">{product.name}</span>
+          <span className="underline decoration-[#6D1B2F]/40 decoration-1 underline-offset-[5px]">{product.name}</span>
         </h3>
         
         {product.description && (
